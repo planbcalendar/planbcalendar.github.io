@@ -58,7 +58,7 @@
   html[data-theme="dark"]{--ink:#f4f4f6;--body:#c8ccd6;--mut:#9BA1B3;--mutsoft:#7d8290;--line:#262B3B;--linesoft:#1c202c;--canvas:#0E1017;--soft:#12141d;--card:#161a26;}
   *{box-sizing:border-box;margin:0;}
   body{background:var(--canvas);color:var(--ink);font-family:Pretendard,-apple-system,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;}
-  .wrap{max-width:1200px;margin:0 auto;padding:0 24px;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
   a{color:inherit;text-decoration:none;}
   .disp{font-family:Pretendard,sans-serif;font-weight:800;letter-spacing:-.04em;}
   /* nav */
@@ -103,6 +103,8 @@
   .row2 .txt .mini b{color:var(--ink);font-weight:600;}
   /* 3up cards */
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .grid.two{grid-template-columns:repeat(2,1fr);}
+  .grid>*{height:100%;}
   .feat{background:var(--card);border-radius:12px;padding:32px;}
   .feat .ico{width:40px;height:40px;border-radius:10px;background:var(--canvas);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--ink);}
   .feat h3{font-size:18px;margin-bottom:8px;font-weight:600;}
@@ -130,7 +132,7 @@
   .fcol a{display:block;color:var(--ondarksoft);font-size:14px;padding:5px 0;}
   .fcol a:hover{color:var(--ondark);}
   .fbot{border-top:1px solid #262626;padding-top:24px;font-size:13px;color:var(--ondarksoft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-  @media(max-width:860px){h1{font-size:40px;}h2{font-size:32px;}.navlinks{display:none;}.grid{grid-template-columns:1fr;}.row2{grid-template-columns:1fr;}.row2.rev .txt{order:0;}}
+  @media(max-width:860px){h1{font-size:40px;}h2{font-size:32px;}.navlinks{display:none;}section.blk{padding:64px 0;}.hero{padding:64px 0 32px;}.grid,.grid.two{grid-template-columns:1fr;}.row2{grid-template-columns:1fr;}.row2.rev .txt{order:0;}}
 </style>
 </head>
 <body>
@@ -145,7 +147,7 @@
 <header class="hero"><div class="wrap">
   <h1 class="disp">여러 캘린더의 일정을<br>한곳에서 관리하자</h1>
   <p class="sub"><b style="color:var(--ink)">Google</b> · <b style="color:var(--ink)">Microsoft 365</b> · <b style="color:var(--ink)">Apple iCloud</b> · <b style="color:var(--ink)">Notion</b> · <b style="color:var(--ink)">ICS 구독</b>을 하나로 모음. 앱에서 만들고 고치면 원본에 바로 반영됨. 브라우저 탭 말고, 늘 켜두는 데스크탑 앱임.</p>
-  <div class="heroshot shot wrap" style="padding:0;">
+  <div class="heroshot shot">
     <img id="heroImg" src="assets/screenshots/month-light.jpg" alt="PlanB Calendar 월 뷰 — 좌측 사이드바에 미니 달력·캘린더 목록·할 일, 우측에 색상별 일정이 채워진 월간 그리드">
   </div>
 </div></header>
@@ -165,7 +167,7 @@
 <section class="blk" id="features" style="background:var(--soft);"><div class="wrap">
   <div class="k">기능</div>
   <h2 class="disp" data-comment-anchor="422f851e-h2feat">Windows에 맞게 만들었음</h2>
-  <p class="lead" style="margin-bottom:64px;">실제 화면임. 마케팅용 그림이 아니라 앱을 그대로 보여줌.</p>
+  <p class="lead">실제 화면임. 마케팅용 그림이 아니라 앱을 그대로 보여줌.</p>
 
   <div class="row2">
     <div class="txt">
@@ -226,7 +228,7 @@
   <h2 class="disp">월·주·일, 원하는 대로</h2>
   <p class="lead">겹치는 일정도 창 크기에 맞춰 알아서 정리됨.</p>
   <div class="grid">
-    <div class="shot"><img src="assets/screenshots/month-dark.jpg" alt="월 뷰 다크 테마"></div>
+    <div class="shot"><img src="assets/screenshots/month-light.jpg" alt="월 뷰 라이트 테마"></div>
     <div class="shot"><img src="assets/screenshots/week.jpg" alt="주간 뷰 — 요일별 시간 그리드에 일정 카드"></div>
     <div class="shot"><img src="assets/screenshots/day.jpg" alt="일 뷰 — 하루 시간대별 일정"></div>
   </div>
@@ -237,6 +239,16 @@
       <p>일정이 많은 날은 <b>"+N개 더"</b>를 누르면 그날 전체를 팝오버로 펼쳐 보여줌. 화면을 옮기지 않아도 됨.</p>
     </div>
     <div class="shot"><img src="assets/screenshots/day-peek.jpg" alt="월 뷰에서 특정 날짜의 +N개 더를 눌러 그날의 모든 일정을 팝오버로 펼쳐 보여주는 화면"></div>
+  </div>
+</div></section>
+
+<section class="blk"><div class="wrap">
+  <div class="k">테마</div>
+  <h2 class="disp">라이트·다크, 둘 다</h2>
+  <p class="lead">앱 전체 테마를 라이트·다크로 바꿀 수 있음. 시스템 설정을 따라 자동으로 전환되게도 됨.</p>
+  <div class="grid two">
+    <div class="shot"><img src="assets/screenshots/month-light.jpg" alt="앱 라이트 테마 화면"></div>
+    <div class="shot"><img src="assets/screenshots/month-dark.jpg" alt="앱 다크 테마 화면"></div>
   </div>
 </div></section>
 
