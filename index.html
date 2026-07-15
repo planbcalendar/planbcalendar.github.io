@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlanB Calendar — Google·Microsoft 365·Apple 통합 데스크탑 캘린더 (Windows)</title>
+<meta name="description" content="PlanB Calendar는 Google Calendar, Microsoft 365, Apple iCloud, Notion, URL(ICS) 구독을 한 곳에 모으는 Windows 데스크탑 캘린더 앱임. 앱에서 만들고 고친 일정이 원본에 바로 반영되는 양방향 동기화, 데스크탑 위젯, 출발 알림, 로컬 우선 저장을 지원함.">
+<meta name="keywords" content="데스크탑 캘린더, Windows 캘린더, Google Calendar 통합, Microsoft 365 캘린더, Apple iCloud 캘린더, Notion 캘린더, ICS 구독, 캘린더 동기화, PlanB Calendar">
+<meta name="author" content="DASIDA7">
+<link rel="canonical" href="https://planbcalendar.github.io/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PlanB Calendar">
+<meta property="og:title" content="PlanB Calendar — 모든 일정을 하나의 데스크탑 캘린더로">
+<meta property="og:description" content="Google·Microsoft 365·Apple iCloud·Notion·ICS 구독을 한 곳에서. Windows 데스크탑 캘린더, 양방향 동기화.">
+<meta property="og:url" content="https://planbcalendar.github.io/">
+<meta property="og:image" content="https://planbcalendar.github.io/assets/screenshots/month-light.jpg">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PlanB Calendar — 통합 데스크탑 캘린더">
+<meta name="twitter:description" content="Google·Microsoft 365·Apple·Notion·ICS를 한 곳에서. Windows 데스크탑 캘린더, 양방향 동기화.">
+<meta name="twitter:image" content="https://planbcalendar.github.io/assets/screenshots/month-light.jpg">
+<link rel="icon" type="image/png" href="assets/icon-256.png">
+<link rel="apple-touch-icon" href="assets/icon-256.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"SoftwareApplication","name":"PlanB Calendar",
+  "operatingSystem":"Windows 10, Windows 11","applicationCategory":"BusinessApplication","applicationSubCategory":"Calendar",
+  "softwareVersion":"1.5.0","author":{"@type":"Person","name":"DASIDA7"},
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "description":"Google Calendar, Microsoft 365, Apple iCloud, Notion, URL(ICS) 구독을 통합하는 Windows 데스크탑 캘린더 앱. 양방향 동기화, 데스크탑 위젯, 출발 알림, 로컬 우선 저장 지원.",
+  "featureList":["Google Calendar 양방향 동기화","Microsoft 365 양방향 동기화","Apple iCloud 양방향 동기화","Notion 양방향 동기화","URL(ICS) 구독","다중 계정 연결","월/주/일 뷰","데스크탑 위젯","출발 알림","일정 색상 분류 및 필터","라이트/다크 테마","로컬 우선 저장"],
+  "screenshot":"https://planbcalendar.github.io/assets/screenshots/month-light.jpg"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"어떤 캘린더 서비스를 지원하나요?","acceptedAnswer":{"@type":"Answer","text":"Google Calendar, Microsoft 365(Outlook), Apple iCloud, Notion, URL(ICS) 구독을 지원함. Google·Microsoft·Apple·Notion은 양방향 동기화, ICS는 읽기 전용."}},
+    {"@type":"Question","name":"양방향 동기화란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"앱에서 만들거나 고친 일정이 Google·Microsoft 365 원본에 바로 반영됨. 다른 기기에서도 똑같이 보임."}},
+    {"@type":"Question","name":"비용이 드나요?","acceptedAnswer":{"@type":"Answer","text":"무료임. Windows 10·11용 설치형 프로그램으로 제공됨."}},
+    {"@type":"Question","name":"내 일정 데이터는 어디에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"로컬 우선으로 내 기기에 저장됨. 동기화는 사용자가 연결한 계정을 통해서만 이뤄짐."}},
+    {"@type":"Question","name":"Apple iCloud는 어떻게 연결하나요?","acceptedAnswer":{"@type":"Answer","text":"Apple ID와 앱 전용 암호로 연결하면 양방향으로 동기화됨. Apple이 서드파티에 본 비밀번호를 허용하지 않아 앱 전용 암호를 씀."}}
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --ink:#111111;--body:#374151;--mut:#6b7280;--mutsoft:#898989;
+    --line:#e5e7eb;--linesoft:#f3f4f6;--canvas:#ffffff;--soft:#f8f9fa;--card:#f5f5f5;
+    --dark:#101010;--ondark:#ffffff;--ondarksoft:#a1a1aa;--accent:#6E6BE6;
+  }
+  html[data-theme="dark"]{--ink:#f4f4f6;--body:#c8ccd6;--mut:#9BA1B3;--mutsoft:#7d8290;--line:#262B3B;--linesoft:#1c202c;--canvas:#0E1017;--soft:#12141d;--card:#161a26;}
+  *{box-sizing:border-box;margin:0;}
+  body{background:var(--canvas);color:var(--ink);font-family:Pretendard,-apple-system,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;text-decoration:none;}
+  .disp{font-family:Pretendard,sans-serif;font-weight:800;letter-spacing:-.04em;}
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--canvas) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;gap:26px;height:64px;}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:16px;letter-spacing:-.02em;}
+  .navlinks{display:flex;gap:24px;margin-left:auto;font-size:14px;color:var(--mut);font-weight:500;}
+  .navlinks a:hover{color:var(--ink);}
+  .btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:1px solid transparent;background:none;color:inherit;font-family:inherit;}
+  .btnP{background:var(--ink);color:var(--canvas);}
+  .btnP:hover{background:var(--accent);color:#fff;}
+  .btnG{border-color:var(--line);color:var(--ink);background:var(--canvas);}
+  .tgl{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--canvas);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink);font-size:15px;}
+  /* hero */
+  .hero{padding:88px 0 40px;text-align:center;}
+  .badge{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:var(--mut);background:var(--card);border-radius:9999px;padding:5px 14px;margin-bottom:26px;}
+  .badge b{color:var(--ink);font-weight:600;}
+  h1{font-size:64px;line-height:1.08;letter-spacing:-.045em;margin-bottom:20px;font-weight:800;}
+  .sub{font-size:19px;color:var(--body);max-width:640px;margin:0 auto 30px;line-height:1.55;}
+  .cta{display:flex;gap:12px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;}
+  .cta .btn{height:48px;padding:0 24px;font-size:15px;}
+  .fine{font-size:13px;color:var(--mutsoft);}
+  /* shots */
+  .shot{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px -28px rgba(0,0,0,.35);background:var(--card);}
+  .shot img{width:100%;display:block;}
+  .heroshot{margin-top:52px;}
+  section.blk{padding:96px 0;}
+  .k{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--mut);text-align:center;margin-bottom:12px;}
+  h2{font-size:44px;text-align:center;margin-bottom:14px;line-height:1.1;letter-spacing:-.035em;}
+  .lead{text-align:center;color:var(--body);max-width:600px;margin:0 auto 48px;font-size:17px;}
+  /* services */
+  .svcrow{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+  .chip{display:flex;align-items:center;gap:9px;padding:11px 18px;border:1px solid var(--line);border-radius:9999px;background:var(--canvas);font-size:14px;font-weight:500;}
+  .tag{font-size:11px;font-weight:600;padding:2px 9px;border-radius:9999px;background:var(--card);color:var(--mut);}
+  /* big feature row */
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-bottom:32px;}
+  .row2.rev .txt{order:2;}
+  .row2 .txt h3{font-size:30px;letter-spacing:-.035em;margin-bottom:12px;line-height:1.2;font-family:Pretendard,sans-serif;font-weight:800;}
+  .row2 .txt p{font-size:16px;color:var(--body);}
+  .row2 .txt .mini{margin-top:16px;display:flex;flex-direction:column;gap:8px;}
+  .row2 .txt .mini div{font-size:14px;color:var(--mut);display:flex;gap:9px;align-items:flex-start;}
+  .row2 .txt .mini b{color:var(--ink);font-weight:600;}
+  /* 3up cards */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .feat{background:var(--card);border-radius:12px;padding:32px;}
+  .feat .ico{width:40px;height:40px;border-radius:10px;background:var(--canvas);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--ink);}
+  .feat h3{font-size:18px;margin-bottom:8px;font-weight:600;}
+  .feat p{font-size:15px;color:var(--body);}
+  /* table */
+  table.cmp{width:100%;border-collapse:collapse;max-width:720px;margin:0 auto;font-size:15px;}
+  table.cmp th,table.cmp td{border:1px solid var(--line);padding:13px 16px;text-align:left;}
+  table.cmp th{background:var(--card);font-weight:600;}
+  table.cmp td:first-child{color:var(--mut);width:42%;}
+  /* faq */
+  .faq{max-width:720px;margin:32px auto 0;}
+  details{border-bottom:1px solid var(--line);padding:4px 2px;}
+  summary{cursor:pointer;padding:18px 0;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:16px;}
+  summary::-webkit-details-marker{display:none;}
+  details p{padding:0 0 18px;color:var(--body);font-size:15px;}
+  details .pl{color:var(--mut);font-weight:400;}
+  /* cta band */
+  .ctaband{background:var(--card);border-radius:16px;padding:64px 40px;text-align:center;}
+  .ctaband h2{font-size:34px;margin-bottom:24px;}
+  /* footer */
+  footer{background:var(--dark);color:var(--ondarksoft);padding:64px 0 40px;margin-top:96px;}
+  .fgrid{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;margin-bottom:40px;}
+  footer .brand{color:var(--ondark);}
+  .fcol h4{color:var(--ondark);font-size:13px;font-weight:600;margin-bottom:14px;letter-spacing:.02em;}
+  .fcol a{display:block;color:var(--ondarksoft);font-size:14px;padding:5px 0;}
+  .fcol a:hover{color:var(--ondark);}
+  .fbot{border-top:1px solid #262626;padding-top:24px;font-size:13px;color:var(--ondarksoft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  @media(max-width:860px){h1{font-size:40px;}h2{font-size:32px;}.navlinks{display:none;}.grid{grid-template-columns:1fr;}.row2{grid-template-columns:1fr;}.row2.rev .txt{order:0;}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav">
+  <a class="brand" href="/"><img src="assets/icon-256.png" width="26" height="26" alt="PlanB Calendar 아이콘" style="border-radius:6px;">PlanB Calendar</a>
+  <div class="navlinks"><a href="#services">연동</a><a href="#features">기능</a><a href="#faq">FAQ</a><a href="#download">다운로드</a></div>
+  <button class="tgl" id="themeBtn" aria-label="라이트/다크 전환">◐</button>
+  <a class="btn btnP" href="#download">다운로드</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <h1 class="disp">여러 캘린더의 일정을<br>한곳에서 관리하자</h1>
+  <p class="sub"><b style="color:var(--ink)">Google</b> · <b style="color:var(--ink)">Microsoft 365</b> · <b style="color:var(--ink)">Apple iCloud</b> · <b style="color:var(--ink)">Notion</b> · <b style="color:var(--ink)">ICS 구독</b>을 하나로 모음. 앱에서 만들고 고치면 원본에 바로 반영됨. 브라우저 탭 말고, 늘 켜두는 데스크탑 앱임.</p>
+  <div class="heroshot shot wrap" style="padding:0;">
+    <img id="heroImg" src="assets/screenshots/month-light.jpg" alt="PlanB Calendar 월 뷰 — 좌측 사이드바에 미니 달력·캘린더 목록·할 일, 우측에 색상별 일정이 채워진 월간 그리드">
+  </div>
+</div></header>
+
+<section class="blk" id="services"><div class="wrap">
+  <h2 class="disp">쓰던 캘린더 그대로</h2>
+  <p class="lead">계정을 연결하면 흩어져 있던 일정이 한 번에 들어옵니다. 같은 서비스라도 계정을 여러 개 붙일 수 있어요.</p>
+  <div class="svcrow">
+    <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22 12.2c0-.7-.06-1.4-.18-2H12v4h5.6a4.8 4.8 0 0 1-2 3.2v2.6h3.3c1.9-1.8 3-4.4 3-7.8z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.3-2.6c-.9.6-2 1-3.3 1-2.6 0-4.7-1.7-5.5-4H3.1v2.6A10 10 0 0 0 12 22z"/><path fill="#FBBC05" d="M6.5 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1a10 10 0 0 0 0 9.2z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.4L6.5 10c.8-2.3 2.9-4 5.5-4z"/></svg>Google Calendar <span class="tag">양방향</span></span>
+    <span class="chip"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="#F25022" d="M2 2h9.5v9.5H2z"/><path fill="#7FBA00" d="M12.5 2H22v9.5h-9.5z"/><path fill="#00A4EF" d="M2 12.5h9.5V22H2z"/><path fill="#FFB900" d="M12.5 12.5H22V22h-9.5z"/></svg>Microsoft 365 <span class="tag">양방향</span></span>
+    <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 2c.1 1.3-.4 2.6-1.2 3.5-.8 1-2.1 1.7-3.3 1.6-.1-1.3.5-2.6 1.2-3.4.8-1 2.2-1.6 3.3-1.7zM19.5 17c-.5 1.2-.8 1.7-1.5 2.8-1 1.5-2.4 3.4-4.1 3.4-1.5 0-1.9-1-4-1-2 0-2.5 1-4 1-1.7 0-3-1.7-4-3.2C-.9 12.5-.6 7.5 1.1 4.8 2.3 2.9 4.2 1.8 6 1.8c1.8 0 2.9 1 4.4 1 1.4 0 2.3-1 4.4-1 1.6 0 3.3.9 4.5 2.4-4 2.2-3.3 7.8.2 9.8z"/></svg>Apple iCloud <span class="tag">양방향</span></span>
+    <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#000"/><path fill="#fff" d="M7 6h2.2l5.6 7.6V6H17v12h-2.2L9.2 10.4V18H7z"/></svg>Notion <span class="tag">양방향</span></span>
+    <span class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></svg>URL(ICS) 구독 <span class="tag">읽기 전용</span></span>
+  </div>
+</div></section>
+
+<section class="blk" id="features" style="background:var(--soft);"><div class="wrap">
+  <div class="k">기능</div>
+  <h2 class="disp" data-comment-anchor="422f851e-h2feat">Windows에 맞게 만들었음</h2>
+  <p class="lead" style="margin-bottom:64px;">실제 화면임. 마케팅용 그림이 아니라 앱을 그대로 보여줌.</p>
+
+  <div class="row2">
+    <div class="txt">
+      <h3 class="disp">생성된 일정은, 각 계정에 저장</h3>
+      <p>앱에서 일정을 만들거나 고치면 Google·Microsoft 365 등 각각 연결된 캘린더에 즉시 반영됩니다. 폰이나 웹에서 봐도 똑같아요.</p>
+      <div class="mini">
+        <div><b>·</b> 장소에 URL 넣으면 웹미팅으로 자동 인식됨 (Teams·Zoom·Meet)</div>
+        <div><b>·</b> 일정마다 색 지정하고 이름 붙일 수 있음</div>
+      </div>
+    </div>
+    <div class="shot"><img src="assets/screenshots/create.jpg" alt="새 일정 만들기 화면 — 제목, 장소 또는 웹미팅 URL, 일시, 참석자, 캘린더 선택, 메모 입력란"></div>
+  </div>
+
+  <div class="row2 rev">
+    <div class="txt">
+      <h3 class="disp">계정 여러 개를 한 곳에</h3>
+      <p>회사 M365, 개인 Google, 가족 iCloud를 다 붙여도 색으로 구분됨. 계정마다 닉네임·색·표시 여부를 정할 수 있음.</p>
+      <div class="mini">
+        <div><b>·</b> 하위 캘린더까지 켜고 끌 수 있음</div>
+        <div><b>·</b> 색상별로 모아 보는 필터 지원함</div>
+      </div>
+    </div>
+    <div class="shot"><img src="assets/screenshots/accounts.jpg" alt="설정 계정 화면 — Microsoft·Google·Apple 연결 타일과 연결된 계정 목록, 각 계정 색상과 표시 설정"></div>
+  </div>
+
+  <div class="row2">
+    <div class="txt">
+      <h3 class="disp">이동시 소요시간을 확인</h3>
+      <p>장소가 있는 일정은 이동시간·교통을 반영해 "지금 나가세요"를 띄움. 앱이 꺼져 있어도 알림이 옴.</p>
+      <div class="mini">
+        <div><b>·</b> 출발지는 설정에서 한 번만 넣으면 됨</div>
+        <div><b>·</b> 웹미팅이면 바로 참여 버튼이 뜸</div>
+      </div>
+    </div>
+    <div class="shot"><img src="assets/screenshots/detail-map.jpg" alt="일정 상세 화면 — 상단 지도 타일에 위치 핀, 아래 시간·장소·참석자·메모 정보"></div>
+  </div>
+
+  <div class="row2 rev">
+    <div class="txt">
+      <h3 class="disp">일정 알림 · 출발 알림, 두 번 챙김</h3>
+      <p>시작 전 <b>일정 알림</b>과, 장소가 있으면 이동시간을 계산한 <b>출발 알림</b>이 각각 뜸. "지금 출발하세요 · 자동차 28분"처럼 언제 나가야 할지 딱 알려줘요.</p>
+      <div class="mini">
+        <div><b>·</b> 알림에서 바로 <b>길찾기</b>·일정 <b>열기</b> 가능</div>
+        <div><b>·</b> <b>10분 미루기</b> 등 스누즈 지원</div>
+      </div>
+    </div>
+    <div class="shot"><img src="assets/screenshots/toast-inapp.jpg" alt="월 뷰 우측 하단에 뜬 두 개의 알림 토스트 — 위: 투자자 미팅 15분 후 시작 일정 알림, 아래: 지금 출발하세요 자동차 28분 출발 알림에 경로 지도와 길찾기·열기 버튼"></div>
+  </div>
+
+  <div style="max-width:440px;margin:8px auto 0;text-align:center;">
+    <div class="shot"><img src="assets/screenshots/toast-os.jpg" alt="Windows 작업표시줄 위에 뜬 OS 알림 — 투자자 미팅 지금 출발하세요 자동차 28분, 경로 지도와 길찾기·열기·10분 미루기 버튼"></div>
+    <p style="font-size:14px;color:var(--mut);margin-top:14px;">앱을 닫아둬도 <b style="color:var(--ink);font-weight:600;">Windows 알림</b>으로 그대로 옴</p>
+  </div>
+</div></section>
+
+<section class="blk"><div class="wrap">
+  <div class="k">보기 방식</div>
+  <h2 class="disp">월·주·일, 원하는 대로</h2>
+  <p class="lead">겹치는 일정도 창 크기에 맞춰 알아서 정리됨.</p>
+  <div class="grid">
+    <div class="shot"><img src="assets/screenshots/month-dark.jpg" alt="월 뷰 다크 테마"></div>
+    <div class="shot"><img src="assets/screenshots/week.jpg" alt="주간 뷰 — 요일별 시간 그리드에 일정 카드"></div>
+    <div class="shot"><img src="assets/screenshots/day.jpg" alt="일 뷰 — 하루 시간대별 일정"></div>
+  </div>
+
+  <div class="row2 rev" style="margin-top:56px;">
+    <div class="txt">
+      <h3 class="disp">하루가 꽉 차도 한눈에</h3>
+      <p>일정이 많은 날은 <b>"+N개 더"</b>를 누르면 그날 전체를 팝오버로 펼쳐 보여줌. 화면을 옮기지 않아도 됨.</p>
+    </div>
+    <div class="shot"><img src="assets/screenshots/day-peek.jpg" alt="월 뷰에서 특정 날짜의 +N개 더를 눌러 그날의 모든 일정을 팝오버로 펼쳐 보여주는 화면"></div>
+  </div>
+</div></section>
+
+<section class="blk" style="background:var(--soft);"><div class="wrap">
+  <div class="k">더 있음</div>
+  <h2 class="disp">작지만 챙긴 것들</h2>
+  <div class="grid" style="margin-top:48px;">
+    <div class="feat"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><h3>데스크탑 위젯</h3><p>월간 달력과 오늘 일정을 바탕화면에 띄움. 크기 조절·항상 위 고정됨.</p></div>
+    <div class="feat"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg></div><h3>라이트·다크</h3><p>시스템 설정을 따라 자동 전환됨. 강조색도 바꿀 수 있음.</p></div>
+    <div class="feat"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>로컬 우선 저장</h3><p>일정은 내 기기에 먼저 저장됨. 동기화는 연결한 계정을 통해서만 함.</p></div>
+  </div>
+
+  <div style="max-width:380px;margin:56px auto 0;text-align:center;">
+    <div class="shot" style="padding:20px;"><img src="assets/screenshots/shortcuts.jpg" alt="키보드 단축키 목록 — 새 일정 N, 오늘로 이동 T, 이전/다음 좌우 방향키, 월 보기 M, 주 보기 W, 일 보기 D, 검색 Ctrl+F, 직전 일정 이동 되돌리기 Ctrl+Z"></div>
+    <p style="font-size:14px;color:var(--mut);margin-top:14px;">마우스 없이 <b style="color:var(--ink);font-weight:600;">키보드 단축키</b>로 바로 (N·T·M·W·D·Ctrl+F·Ctrl+Z)</p>
+  </div>
+</div></section>
+
+<section class="blk"><div class="wrap">
+  <div class="k">연동 범위</div>
+  <h2 class="disp">서비스별 지원</h2>
+  <p class="lead">제공자에 따라 동기화 방식이 다름.</p>
+  <table class="cmp">
+    <thead><tr><th>서비스</th><th>지원 방식</th></tr></thead>
+    <tbody>
+      <tr><td>Google Calendar</td><td>양방향 (생성·수정·삭제)</td></tr>
+      <tr><td>Microsoft 365 (Outlook)</td><td>양방향 (생성·수정·삭제)</td></tr>
+      <tr><td>Apple iCloud</td><td>양방향 (앱 전용 암호로 연결)</td></tr>
+      <tr><td>Notion</td><td>양방향 (연동 연결)</td></tr>
+      <tr><td>URL(ICS) 구독</td><td>읽기 전용 (공휴일·외부 일정 등)</td></tr>
+    </tbody>
+  </table>
+</div></section>
+
+<section class="blk" id="faq" style="background:var(--soft);"><div class="wrap">
+  <div class="k">자주 묻는 질문</div>
+  <h2 class="disp">FAQ</h2>
+  <div class="faq">
+    <details open><summary>어떤 캘린더 서비스를 지원함? <span class="pl">＋</span></summary><p>Google Calendar, Microsoft 365(Outlook), Apple iCloud, Notion, URL(ICS) 구독을 지원함. Google·Microsoft·Apple·Notion은 양방향, ICS는 읽기 전용임.</p></details>
+    <details><summary>양방향 동기화가 뭔가요? <span class="pl">＋</span></summary><p>앱에서 만들거나 고친 일정이 원본 캘린더에 바로 반영됨. 폰·웹 등 다른 기기에서도 똑같이 보임.</p></details>
+    <details><summary>돈 내야 함? <span class="pl">＋</span></summary><p>무료임. Windows 10·11용 설치형 프로그램으로 제공됨.</p></details>
+    <details><summary>내 데이터는 어디 저장됨? <span class="pl">＋</span></summary><p>로컬 우선으로 내 기기에 저장됨. 동기화는 사용자가 직접 연결한 계정을 통해서만 이뤄짐.</p></details>
+    <details><summary>Apple iCloud는 어떻게 붙임? <span class="pl">＋</span></summary><p>Apple ID와 앱 전용 암호로 연결하면 양방향으로 동기화됨.본 비밀번호를 안 열어줘서 앱 전용 암호를 씀.</p></details>
+  </div>
+</div></section>
+
+<section class="blk" id="download"><div class="wrap">
+  <div class="ctaband">
+    <h2 class="disp">그냥 써봐.. 나 열심히 만들었어 이만한 캘린더 찾기 쉽지 않아</h2>
+    <a class="btn btnP" style="height:52px;padding:0 30px;font-size:16px;margin-top:12px;" href="https://github.com/planbcalendar/planbcalendar.github.io/releases/latest">Windows용 다운로드</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div style="max-width:260px;">
+      <div class="brand" style="margin-bottom:12px;"><img src="assets/icon-256.png" width="24" height="24" alt="" style="border-radius:6px;">PlanB Calendar</div>
+      <p style="font-size:14px;color:var(--ondarksoft);">흩어진 일정을 한 곳에서 보는 Windows 데스크탑 캘린더.</p>
+    </div>
+    <div class="fcol"><h4>제품</h4><a href="#services">연동</a><a href="#features">기능</a><a href="#download">다운로드</a></div>
+    <div class="fcol"><h4>문서</h4><a href="#faq">FAQ</a><a href="privacy.html">개인정보처리방침</a><a href="terms.html">이용약관</a></div>
+    <div class="fcol"><h4>링크</h4><a href="https://github.com/planbcalendar/planbcalendar.github.io/releases/latest">다운로드</a><a href="https://github.com/planbcalendar/planbcalendar.github.io/issues/new">버그 신고</a><a href="https://github.com/planbcalendar/planbcalendar.github.io">GitHub</a></div>
+  </div>
+  <div class="fbot"><span>© 2026 PlanB Calendar</span><span>제작 DASIDA7</span></div>
+</div></footer>
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="확대 이미지" style="position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:4vw;background:rgba(12,14,22,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:zoom-out;">
+  <img id="lightboxImg" src="" alt="" style="max-width:100%;max-height:100%;border-radius:12px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);">
+</div>
+<script>
+(function(){
+  var html=document.documentElement,btn=document.getElementById('themeBtn'),hero=document.getElementById('heroImg');
+  var saved=localStorage.getItem('planb_theme');if(saved)html.setAttribute('data-theme',saved);
+  function sync(){var d=html.getAttribute('data-theme')==='dark';btn.textContent=d?'☾':'☀';hero.src=d?'assets/screenshots/month-dark.jpg':'assets/screenshots/month-light.jpg';}
+  sync();
+  btn.addEventListener('click',function(){var d=html.getAttribute('data-theme')==='dark';var n=d?'light':'dark';html.setAttribute('data-theme',n);localStorage.setItem('planb_theme',n);sync();});
+  // lightbox
+  var lb=document.getElementById('lightbox'),lbImg=document.getElementById('lightboxImg');
+  document.querySelectorAll('.shot img').forEach(function(img){
+    img.style.cursor='zoom-in';
+    img.addEventListener('click',function(){lbImg.src=img.currentSrc||img.src;lbImg.alt=img.alt;lb.style.display='flex';document.body.style.overflow='hidden';});
+  });
+  function closeLb(){lb.style.display='none';document.body.style.overflow='';}
+  lb.addEventListener('click',closeLb);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.style.display==='flex')closeLb();});
+})();
+</script>
+</body>
+</html>
