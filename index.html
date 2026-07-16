@@ -77,6 +77,9 @@
   .hero{padding:88px 0 40px;text-align:center;}
   .badge{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:var(--mut);background:var(--card);border-radius:9999px;padding:5px 14px;margin-bottom:26px;}
   .badge b{color:var(--ink);font-weight:600;}
+  /* 히어로 앱명 라벨 (OAuth 브랜딩 — h1 위 앱 이름 노출) */
+  .heroname{display:inline-flex;align-items:center;gap:9px;font-size:17px;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin-bottom:16px;}
+  .heroname img{width:24px;height:24px;border-radius:6px;}
   h1{font-size:64px;line-height:1.08;letter-spacing:-.045em;margin-bottom:20px;font-weight:800;}
   .sub{font-size:19px;color:var(--body);max-width:640px;margin:0 auto 30px;line-height:1.55;}
   .cta{display:flex;gap:12px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;}
@@ -150,6 +153,7 @@
 </div></nav>
 
 <header class="hero"><div class="wrap">
+  <div class="heroname"><img src="assets/icon-256.png" width="24" height="24" alt="PlanB Calendar 아이콘">PlanB Calendar</div>
   <h1 class="disp">여러 캘린더의 일정을<br>한곳에서 관리하자</h1>
   <p class="sub"><b style="color:var(--ink)">PlanB Calendar</b>는 <b style="color:var(--ink)">Google</b> · <b style="color:var(--ink)">Microsoft 365</b> · <b style="color:var(--ink)">Apple</b> · <b style="color:var(--ink)">Notion</b> · <b style="color:var(--ink)">ICS 구독</b> 캘린더를 한곳에 모아 관리하는 Windows 데스크탑 캘린더 앱임. 앱에서 만들고 고치면 원본에 바로 반영됨. 브라우저 탭 말고, 늘 켜두는 앱.</p>
   <!-- 로고 스트립: 배포 시 각 사 공식 브랜드 에셋으로 교체 권장(원형/여백 등 브랜드 가이드라인 준수) -->
