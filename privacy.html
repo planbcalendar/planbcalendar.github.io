@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="auto">
+<html lang="ko" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,23 +9,49 @@
 <link rel="icon" type="image/png" href="assets/icon-256.png">
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
 <style>
-  :root{--bg:#0E1017;--card:#1A1E2C;--line:#262B3B;--tx:#EEF0F6;--mut:#9BA1B3;--pri:#7B78EC;}
-  @media(prefers-color-scheme:light){html[data-theme="auto"]{--bg:#FBFBFE;--card:#fff;--line:#E6E8F0;--tx:#1B1E2A;--mut:#616779;--pri:#6E6BE6;}}
+  /* ===== index.html 공유 헤더 시스템 (동일) ===== */
+  :root{
+    --ink:#111111;--body:#374151;--mut:#6b7280;--mutsoft:#898989;
+    --line:#e5e7eb;--linesoft:#f3f4f6;--canvas:#ffffff;--soft:#f8f9fa;--card:#f5f5f5;
+    --dark:#101010;--ondark:#ffffff;--ondarksoft:#a1a1aa;--accent:#6E6BE6;
+  }
+  html[data-theme="dark"]{--ink:#f4f4f6;--body:#c8ccd6;--mut:#9BA1B3;--mutsoft:#7d8290;--line:#262B3B;--linesoft:#1c202c;--canvas:#0E1017;--soft:#12141d;--card:#161a26;}
   *{box-sizing:border-box;margin:0;}
-  body{background:var(--bg);color:var(--tx);font-family:system-ui,'Pretendard','Malgun Gothic',sans-serif;line-height:1.75;}
-  .wrap{max-width:760px;margin:0 auto;padding:56px 24px 90px;}
-  a{color:var(--pri);}
-  h1{font-size:32px;letter-spacing:-.02em;margin-bottom:8px;}
+  body{background:var(--canvas);color:var(--ink);font-family:Pretendard,-apple-system,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;text-decoration:none;}
+  nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--canvas) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;gap:26px;height:64px;}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:16px;letter-spacing:-.02em;}
+  .navlinks{display:flex;gap:24px;margin-left:auto;font-size:14px;color:var(--mut);font-weight:500;}
+  .navlinks a:hover{color:var(--ink);}
+  .btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:1px solid transparent;background:none;color:inherit;font-family:inherit;}
+  .btnP{background:var(--ink);color:var(--canvas);}
+  .btnP:hover{background:var(--accent);color:#fff;}
+  .tgl{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--canvas);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink);font-size:15px;}
+  @media(max-width:860px){.navlinks{display:none;}}
+  /* ===== 문서 본문 ===== */
+  .page{max-width:760px;margin:0 auto;padding:44px 24px 90px;}
+  .page h1{font-size:34px;letter-spacing:-.035em;margin-bottom:8px;font-weight:800;}
   .upd{color:var(--mut);font-size:13.5px;margin-bottom:36px;}
-  h2{font-size:19px;margin:34px 0 10px;letter-spacing:-.02em;}
-  p,li{color:var(--mut);font-size:15px;}
-  ul{padding-left:20px;}li{margin-bottom:6px;}
-  .back{display:inline-block;margin-bottom:30px;font-size:14px;color:var(--mut);}
-  strong{color:var(--tx);}
+  .page h2{font-size:19px;margin:34px 0 10px;letter-spacing:-.02em;font-weight:700;}
+  .page p,.page li{color:var(--body);font-size:15px;line-height:1.75;}
+  .page ul{padding-left:20px;margin:6px 0;}
+  .page li{margin-bottom:6px;}
+  .page strong{color:var(--ink);}
+  .page a{color:var(--accent);}
 </style>
 </head>
-<body><div class="wrap">
-  <a class="back" href="/">← PlanB Calendar 홈</a>
+<body>
+
+<nav><div class="wrap nav">
+  <a class="brand" href="/"><img src="assets/icon-256.png" width="26" height="26" alt="PlanB Calendar 아이콘" style="border-radius:6px;">PlanB Calendar</a>
+  <div class="navlinks"><a href="/#services">연동</a><a href="/#features">기능</a><a href="/#faq">FAQ</a><a href="releases.html">릴리스노트</a><a href="bug-report.html">버그 신고</a></div>
+  <button class="tgl" id="themeBtn" aria-label="라이트/다크 전환">◐</button>
+  <a class="btn btnP" href="https://github.com/planbcalendar/planbcalendar.github.io/releases/latest/download/PlanB-Calendar-Setup.exe">다운로드</a>
+</div></nav>
+
+<div class="page">
   <h1>개인정보처리방침</h1>
   <p class="upd">최종 업데이트: 2026년 7월 · PlanB Calendar (제작 DASIDA7)</p>
 
@@ -54,6 +80,17 @@
   <p>계정 연결 해제 시 해당 계정의 인증 정보와 캐시된 일정이 기기에서 제거됩니다. 앱 삭제 시 로컬에 저장된 모든 데이터가 함께 삭제됩니다.</p>
 
   <h2>6. 문의</h2>
-  <p>본 방침에 관한 문의는 이메일 <a href="mailto:goodgoosssss123@gmail.com" style="color:var(--pri)">goodgoosssss123@gmail.com</a> 또는 GitHub 저장소(<a href="https://github.com/planbcalendar/planbcalendar.github.io/issues" style="color:var(--pri)">github.com/planbcalendar/planbcalendar.github.io</a>)를 통해 하실 수 있습니다.</p>
-</div></body>
+  <p>본 방침에 관한 문의는 이메일 <a href="mailto:goodgoosssss123@gmail.com">goodgoosssss123@gmail.com</a> 또는 <a href="bug-report.html">버그 신고 페이지</a>를 통해 하실 수 있습니다.</p>
+</div>
+
+<script>
+(function(){
+  var html=document.documentElement,btn=document.getElementById('themeBtn');
+  var saved=localStorage.getItem('planb_theme');if(saved)html.setAttribute('data-theme',saved);
+  function sync(){btn.textContent=html.getAttribute('data-theme')==='dark'?'☾':'☀';}
+  sync();
+  btn.addEventListener('click',function(){var d=html.getAttribute('data-theme')==='dark';var n=d?'light':'dark';html.setAttribute('data-theme',n);localStorage.setItem('planb_theme',n);sync();});
+})();
+</script>
+</body>
 </html>
