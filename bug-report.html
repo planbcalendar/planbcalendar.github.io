@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>버그 신고 — PlanB Calendar</title>
+<meta name="description" content="PlanB Calendar 버그 신고. 사용 중 발생한 문제와 스크린샷을 남겨 주시면 빠르게 확인해 개선하겠습니다.">
+<link rel="canonical" href="https://planb-calendar.co.kr/bug-report.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" href="assets/icon-256.png">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+  :root{--bg:#0E1017;--card:#1A1E2C;--line:#262B3B;--tx:#EEF0F6;--mut:#9BA1B3;--pri:#7B78EC;}
+  @media(prefers-color-scheme:light){html[data-theme="auto"]{--bg:#FBFBFE;--card:#fff;--line:#E6E8F0;--tx:#1B1E2A;--mut:#616779;--pri:#6E6BE6;}}
+  *{box-sizing:border-box;margin:0;}
+  body{background:var(--bg);color:var(--tx);font-family:system-ui,'Pretendard','Malgun Gothic',sans-serif;line-height:1.75;}
+  .wrap{max-width:720px;margin:0 auto;padding:56px 24px 90px;}
+  a{color:var(--pri);}
+  h1{font-size:32px;letter-spacing:-.02em;margin-bottom:8px;}
+  .sub{color:var(--mut);font-size:15px;margin-bottom:8px;}
+  .back{display:inline-block;margin-bottom:30px;font-size:14px;color:var(--mut);}
+  .formcard{margin-top:26px;border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden;}
+  iframe{display:block;width:100%;border:0;}
+  .alt{margin-top:26px;font-size:13.5px;color:var(--mut);}
+  strong{color:var(--tx);}
+</style>
+</head>
+<body><div class="wrap">
+  <a class="back" href="/">← PlanB Calendar 홈</a>
+  <h1>버그 신고</h1>
+  <p class="sub">사용 중 발생한 문제를 알려 주세요. <strong>스크린샷과 함께</strong> 남겨 주시면 원인을 훨씬 빨리 찾을 수 있어요.</p>
+  <p class="sub" style="font-size:13.5px;">앱 버전은 <strong>설정 › 정보</strong>에서 확인할 수 있습니다. 로그인 없이 바로 제출됩니다.</p>
+
+  <div class="formcard">
+    <iframe data-tally-src="https://tally.so/embed/9qgRaG?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="600" title="PlanB Calendar 버그 신고"></iframe>
+  </div>
+
+  <p class="alt">폼이 보이지 않으면 <a href="https://tally.so/r/9qgRaG" target="_blank" rel="noopener">이 링크</a>에서 직접 작성하거나, 이메일 <a href="mailto:goodgoosssss123@gmail.com">goodgoosssss123@gmail.com</a> 으로 보내 주셔도 됩니다.</p>
+</div>
+<script>
+// Tally 임베드 초기화(동적 높이)
+var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc;});};
+if("undefined"!=typeof Tally)v();
+else if(null==d.querySelector('script[src="'+w+'"]')){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+</script>
+</body>
+</html>
