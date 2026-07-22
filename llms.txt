@@ -1,0 +1,26 @@
+# PlanB Calendar
+
+> Google Calendar, Microsoft 365, Apple iCloud, Notion, URL(ICS) 구독을 하나로 통합하는 무료 Windows 데스크탑 캘린더 앱. 앱에서 만들거나 고친 일정이 원본에 바로 반영되는 양방향 동기화를 지원합니다.
+
+PlanB Calendar는 흩어진 캘린더를 한 화면에서 관리하도록 돕는 Windows 데스크탑 애플리케이션입니다. 여러 서비스의 일정을 한 곳에 모아 보고, 앱에서 편집한 내용이 각 서비스 원본에 즉시 동기화됩니다. 일정 데이터는 로컬 우선으로 저장되며, 회사·기관 프록시 환경도 자동으로 지원합니다.
+
+## 주요 기능
+- Google Calendar · Microsoft 365(Outlook) · Apple iCloud · Notion 양방향 동기화
+- URL(ICS) 캘린더 구독 (읽기 전용)
+- 다중 계정 연결, 월/주/일 뷰
+- 바탕화면 데스크탑 위젯
+- 출발 알림 (길찾기 기반 소요시간 계산)
+- 일정 색상 분류 및 필터, 라이트/다크 테마
+- 로컬 우선 저장, 회사 프록시 자동 감지·수동 설정
+
+## 링크
+- [홈페이지](https://planb-calendar.co.kr/)
+- [Windows 다운로드](https://github.com/planbcalendar/planbcalendar.github.io/releases/latest)
+- [개인정보처리방침](https://planb-calendar.co.kr/privacy.html)
+- [이용약관](https://planb-calendar.co.kr/terms.html)
+
+## 정보
+- 플랫폼: Windows 10, Windows 11
+- 가격: 무료
+- 카테고리: 생산성 / 캘린더
+- 지원 문의: goodgoosssss123@gmail.com
