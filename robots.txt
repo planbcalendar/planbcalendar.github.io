@@ -1,20 +1,87 @@
 # PlanB Calendar — https://planb-calendar.co.kr
 # 모든 검색엔진과 AI 크롤러의 수집(색인·검색·요약)을 환영합니다.
+# All search engines and AI crawlers are welcome to index and cite this site.
 
 User-agent: *
 Allow: /
 
-# 검색엔진
+# ───────── 글로벌 검색엔진 (Global search engines) ─────────
+# Google
 User-agent: Googlebot
 Allow: /
 
+# Microsoft Bing
 User-agent: Bingbot
 Allow: /
 
-# AI 크롤러 (검색·요약·답변 생성)
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Yandex (러시아)
+User-agent: YandexBot
+Allow: /
+
+# Baidu (중국)
+User-agent: Baiduspider
+Allow: /
+
+# Sogou (중국)
+User-agent: Sogou web spider
+Allow: /
+
+# Seznam (체코)
+User-agent: SeznamBot
+Allow: /
+
+# Huawei Petal Search
+User-agent: PetalBot
+Allow: /
+
+# Brave Search
+User-agent: Bravebot
+Allow: /
+
+# ───────── 한국 검색엔진 (Korean search engines) ─────────
+# Naver 네이버
+User-agent: Yeti
+Allow: /
+
+# Daum 다음 (Kakao)
+User-agent: Daumoa
+Allow: /
+
+# ───────── 소셜/링크 미리보기 (Social & link preview) ─────────
+# Facebook
+User-agent: facebookexternalhit
+Allow: /
+
+# X (Twitter)
+User-agent: Twitterbot
+Allow: /
+
+# Apple (Siri·Spotlight)
+User-agent: Applebot
+Allow: /
+
+# Telegram
+User-agent: TelegramBot
+Allow: /
+
+# KakaoTalk 링크 미리보기
+User-agent: kakaotalk-scrap
+Allow: /
+
+# ───────── AI 크롤러 (AI crawlers — 검색·요약·학습) ─────────
+# Google Gemini / Vertex
 User-agent: Google-Extended
 Allow: /
 
+# OpenAI (ChatGPT)
 User-agent: GPTBot
 Allow: /
 
@@ -24,19 +91,42 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+# Anthropic (Claude)
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
+# Apple Intelligence
 User-agent: Applebot-Extended
 Allow: /
 
+# Common Crawl (다수 LLM 학습 소스)
 User-agent: CCBot
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# ByteDance (TikTok)
+User-agent: Bytespider
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://planb-calendar.co.kr/sitemap.xml
