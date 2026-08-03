@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>구글·네이버·회사 캘린더를 하나로 합쳐 보는 법 — PlanB Calendar</title>
-<meta name="description" content="회사는 구글·아웃룩, 개인은 네이버, 팀은 네이버웍스… 계정마다 흩어진 캘린더를 한 화면에 합쳐 색으로 구분해 보는 방법을 정리했음.">
+<meta name="description" content="회사는 구글·아웃룩, 개인은 네이버, 팀은 네이버웍스… 계정마다 흩어진 캘린더를 한 화면에 합쳐 색으로 구분하고, 필요한 것만 골라 보는 방법을 단계별로 정리했음.">
 <meta name="keywords" content="캘린더 통합, 여러 캘린더 합치기, 구글 네이버 캘린더 같이, 캘린더 한 화면, 다계정 캘린더, 데스크탑 캘린더, PlanB Calendar, 플랜비 캘린더">
 <link rel="canonical" href="https://planb-calendar.co.kr/blog/combine-calendars.html">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -18,24 +18,41 @@
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"BlogPosting",
+  "@context":"https://schema.org","@type":"BlogPosting",
   "headline":"구글·네이버·회사 캘린더를 하나로 합쳐 보는 법",
-  "description":"회사는 구글·아웃룩, 개인은 네이버, 팀은 네이버웍스… 계정마다 흩어진 캘린더를 한 화면에 합쳐 색으로 구분해 보는 방법을 정리했음.",
+  "description":"계정마다 흩어진 캘린더를 한 화면에 합쳐 색으로 구분해 보는 방법을 단계별로 정리했음.",
   "image":"https://planb-calendar.co.kr/assets/screenshots/month-light.jpg",
-  "datePublished":"2026-08-04",
-  "dateModified":"2026-08-04",
+  "datePublished":"2026-08-04","dateModified":"2026-08-04",
   "author":{"@type":"Organization","name":"PlanB Calendar"},
   "publisher":{"@type":"Organization","name":"PlanB Calendar","logo":{"@type":"ImageObject","url":"https://planb-calendar.co.kr/assets/icon-256.png"}},
   "mainEntityOfPage":{"@type":"WebPage","@id":"https://planb-calendar.co.kr/blog/combine-calendars.html"}
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"HowTo",
+  "name":"여러 계정의 캘린더를 한 화면에 합쳐 보는 방법",
+  "step":[
+    {"@type":"HowToStep","name":"계정 연결","text":"설정 > 계정에서 네이버·네이버웍스·구글·Microsoft 365·애플·노션 등 쓰는 서비스를 연결한다."},
+    {"@type":"HowToStep","name":"한 화면에 겹쳐 보기","text":"연결하면 모든 계정 일정이 같은 월·주·일 뷰에 함께 표시된다."},
+    {"@type":"HowToStep","name":"색으로 구분","text":"계정과 캘린더마다 색을 지정해 회사·개인 일정을 색으로 구분한다."},
+    {"@type":"HowToStep","name":"필요한 것만 골라 보기","text":"사이드바 체크박스로 보고 싶은 캘린더만 켜고, 일정 색상별 필터로 색 기준으로 걸러 본다."},
+    {"@type":"HowToStep","name":"나란히 비교","text":"일일 뷰의 나란히 보기로 캘린더를 세로 컬럼으로 세워 같은 하루를 비교한다."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"여러 캘린더를 한 화면에서 볼 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"볼 수 있습니다. PlanB Calendar는 네이버·네이버웍스·구글·Microsoft 365·애플·노션·URL(ICS) 캘린더를 한 화면에 겹쳐 색으로 구분해 표시합니다."}},
+    {"@type":"Question","name":"계정마다 색을 다르게 지정할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 계정과 캘린더마다 색을 지정할 수 있고, 사이드바에서 원하는 캘린더만 켜거나 끌 수 있습니다."}},
+    {"@type":"Question","name":"캘린더를 나란히 비교할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 일일 뷰의 나란히 보기를 쓰면 캘린더를 세로 컬럼으로 세워 같은 하루의 일정을 옆으로 비교할 수 있습니다."}}
+  ]
+}
+</script>
 <style>
-  :root{
-    --ink:#111111;--body:#374151;--mut:#6b7280;--mutsoft:#898989;
-    --line:#e5e7eb;--linesoft:#f3f4f6;--canvas:#ffffff;--soft:#f8f9fa;--card:#f5f5f5;
-    --dark:#101010;--ondark:#ffffff;--ondarksoft:#a1a1aa;--accent:#6E6BE6;
-  }
+  :root{--ink:#111111;--body:#374151;--mut:#6b7280;--mutsoft:#898989;--line:#e5e7eb;--linesoft:#f3f4f6;--canvas:#ffffff;--soft:#f8f9fa;--card:#f5f5f5;--dark:#101010;--ondark:#ffffff;--ondarksoft:#a1a1aa;--accent:#6E6BE6;}
   html[data-theme="dark"]{--ink:#f4f4f6;--body:#c8ccd6;--mut:#9BA1B3;--mutsoft:#7d8290;--line:#262B3B;--linesoft:#1c202c;--canvas:#0E1017;--soft:#12141d;--card:#161a26;}
   *{box-sizing:border-box;margin:0;}
   body{background:var(--canvas);color:var(--ink);font-family:Pretendard,-apple-system,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;}
@@ -55,17 +72,24 @@
   .crumb a:hover{color:var(--ink);}
   .art .cat{font-size:13px;font-weight:600;color:var(--accent);margin-bottom:14px;}
   .art h1{font-size:40px;line-height:1.18;letter-spacing:-.04em;font-weight:800;margin-bottom:16px;}
-  .art .meta{font-size:14px;color:var(--mutsoft);padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:36px;}
+  .art .meta{font-size:14px;color:var(--mutsoft);padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:32px;}
   .art p{font-size:16.5px;color:var(--body);line-height:1.8;margin:0 0 20px;}
-  .art h2{font-size:26px;letter-spacing:-.03em;font-weight:800;margin:44px 0 14px;color:var(--ink);}
+  .art h2{font-size:25px;letter-spacing:-.03em;font-weight:800;margin:44px 0 14px;color:var(--ink);}
   .art ul{margin:0 0 20px;padding-left:20px;color:var(--body);}
   .art li{font-size:16.5px;line-height:1.8;margin-bottom:6px;}
   .art b{color:var(--ink);font-weight:600;}
+  .tldr{margin:0 0 34px;padding:20px 24px;border:1px solid var(--line);border-radius:14px;background:var(--soft);}
+  .tldr .lbl{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--accent);margin-bottom:10px;}
+  .tldr ul{margin:0;padding-left:18px;}
+  .tldr li{font-size:15px;color:var(--body);line-height:1.7;margin-bottom:5px;}
+  .tldr b{color:var(--ink);font-weight:600;}
+  .faq .q{font-size:17.5px;font-weight:700;color:var(--ink);margin:26px 0 7px;letter-spacing:-.02em;}
+  .faq .a{font-size:16px;color:var(--body);line-height:1.8;margin:0;}
   .art figure{margin:30px 0;}
   .art figure img{width:100%;border-radius:12px;border:1px solid var(--line);display:block;background:var(--card);}
   .art figure.narrow img{max-width:340px;margin:0 auto;}
   .art figcaption{font-size:13px;color:var(--mutsoft);text-align:center;margin-top:11px;}
-  .callout{margin:36px 0 8px;padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--soft);text-align:center;}
+  .callout{margin:40px 0 8px;padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--soft);text-align:center;}
   .callout h3{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px;}
   .callout p{font-size:15px;color:var(--mut);margin-bottom:18px;}
   footer{background:var(--dark);color:var(--ondarksoft);padding:64px 0 40px;}
@@ -92,45 +116,65 @@
   <h1>구글·네이버·회사 캘린더를 하나로 합쳐 보는 법</h1>
   <div class="meta">2026년 8월 4일 · 읽는 데 6분</div>
 
-  <p>요즘 캘린더가 하나로 끝나는 사람은 드묾. 회사 일정은 <b>구글</b>이나 <b>아웃룩(Microsoft 365)</b>, 개인 약속은 <b>네이버</b>, 팀 일정은 <b>네이버웍스</b>… 이렇게 계정마다 흩어져 있음. 그러다 보면 각 사이트를 번갈아 열어 확인해야 하고, 한쪽에만 잡아둔 일정이 겹쳐서 이중 약속이 나기도 함. 이걸 <b>한 화면에 합쳐서</b> 보는 방법을 정리했음.</p>
+  <div class="tldr">
+    <div class="lbl">핵심 요약</div>
+    <ul>
+      <li>흩어진 캘린더를 합치는 순서 — <b>계정 연결 → 한 화면에 겹쳐 보기 → 색으로 구분 → 필요한 것만 켜기</b>.</li>
+      <li>연결 가능: <b>네이버·네이버웍스·구글·Microsoft 365·애플·노션</b>(양방향)과 <b>URL(ICS) 구독</b>(읽기 전용).</li>
+      <li>계정·캘린더마다 <b>색</b>이 달라 회사·개인 일정을 한눈에 구분함.</li>
+      <li>일일 뷰 <b>나란히 보기</b>로 캘린더를 세로 컬럼으로 세워 비교할 수 있음.</li>
+    </ul>
+  </div>
 
-  <h2>1. 먼저 계정을 연결하기</h2>
-  <p>설정 &gt; 계정에서 쓰는 서비스를 연결함. <b>Microsoft 365 · Google · Apple · 네이버 · 네이버웍스 · Notion</b>은 로그인(또는 앱 비밀번호)으로 연결하면 양방향으로 동기화되고, 공휴일 같은 <b>URL(ICS)</b>은 구독해서 읽기 전용으로 붙일 수 있음.</p>
+  <p>요즘 캘린더가 하나로 끝나는 사람은 드묾. 회사 일정은 구글이나 아웃룩, 개인 약속은 네이버, 팀 일정은 네이버웍스… 이렇게 계정마다 흩어져 있음. 각 사이트를 번갈아 열다 보면 한쪽에만 잡아둔 일정이 겹쳐 이중 약속이 나기도 함. 아래 순서대로 하면 흩어진 캘린더가 한 화면으로 모임.</p>
+
+  <h2>1. 어떤 계정을 연결할 수 있나?</h2>
+  <p>설정 &gt; 계정에서 <b>Microsoft 365 · Google · Apple · 네이버 · 네이버웍스 · Notion</b>을 로그인(또는 앱 비밀번호)으로 연결하면 양방향으로 동기화됨. 공휴일 같은 <b>URL(ICS)</b>은 구독해서 읽기 전용으로 붙일 수 있음.</p>
   <figure>
     <img src="../assets/screenshots/account.jpg" alt="PlanB Calendar 설정 화면 — Microsoft 365·Google·Apple·네이버·Notion·URL/ICS 계정 추가 타일과 연결된 계정 목록">
     <figcaption>설정 &gt; 계정에서 여러 서비스를 연결함. 계정마다 닉네임·색·표시할 하위 캘린더를 지정할 수 있음.</figcaption>
   </figure>
 
-  <h2>2. 한 화면에 겹쳐 보기</h2>
-  <p>연결하면 모든 계정의 일정이 <b>같은 월·주·일 뷰에 함께</b> 표시됨. 더 이상 네이버 탭, 구글 탭을 오갈 필요가 없음. 늘 켜두는 앱 하나에서 회사·개인·팀 일정을 한눈에 봄.</p>
+  <h2>2. 여러 계정 일정을 한 화면에 겹쳐 보기</h2>
+  <p>연결하면 <b>모든 계정의 일정이 같은 월·주·일 뷰에 함께</b> 표시됨. 더 이상 네이버 탭, 구글 탭을 오갈 필요가 없이 회사·개인·팀 일정을 한눈에 봄.</p>
   <figure>
     <img src="../assets/screenshots/month-light.jpg" alt="PlanB Calendar 월 뷰 — 여러 계정의 일정이 색으로 구분되어 한 그리드에 채워진 모습">
     <figcaption>여러 계정의 일정이 한 월 뷰에 함께.</figcaption>
   </figure>
 
-  <h2>3. 색으로 구분하기</h2>
-  <p>계정과 캘린더마다 <b>색</b>이 달라서, 어떤 일정이 회사 건지 개인 건지 색만 봐도 구분됨. 사이드바에서 각 캘린더의 색을 원하는 대로 바꿀 수 있고, 특정 일정만 다른 색으로 지정하는 것도 가능함.</p>
+  <h2>3. 계정·캘린더를 색으로 구분하기</h2>
+  <p>계정과 캘린더마다 <b>색이 달라서</b>, 어떤 일정이 회사 건지 개인 건지 색만 봐도 구분됨. 사이드바에서 각 캘린더의 색을 원하는 대로 바꿀 수 있고, 특정 일정만 다른 색으로 지정하는 것도 가능함.</p>
   <figure class="narrow">
     <img src="../assets/screenshots/sidebar-cal.jpg" alt="PlanB Calendar 사이드바 — Microsoft·Google·Naver·Naver Works 계정과 구독, 일정 색상별 목록이 색으로 구분되어 표시됨">
     <figcaption>사이드바에서 계정·캘린더를 색으로 구분.</figcaption>
   </figure>
 
-  <h2>4. 필요한 것만 골라 보기</h2>
-  <p>다 합쳐 놓으면 가끔은 너무 복잡함. 그럴 땐 <b>사이드바 체크박스</b>로 보고 싶은 캘린더만 켜고 나머지는 끄면 됨. 계정 전체를 끄거나, 계정 안의 특정 하위 캘린더만 끌 수도 있음.</p>
+  <h2>4. 필요한 캘린더만 골라 보기</h2>
+  <p>다 합쳐 놓으면 복잡할 때가 있음. 그럴 땐 <b>사이드바 체크박스</b>로 보고 싶은 캘린더만 켜고 나머지는 끄면 됨. 계정 전체를 끄거나, 계정 안의 특정 하위 캘린더만 끌 수도 있음.</p>
   <ul>
     <li><b>계정/캘린더 토글</b> — 사이드바에서 체크를 끄면 그 일정이 화면에서 사라짐(원본은 그대로)</li>
     <li><b>일정 색상별 필터</b> — "빨강 일정만", "업무 색만" 같은 식으로 색 기준으로 걸러 보기</li>
     <li><b>구독(공휴일 등)</b>은 읽기 전용으로 배경처럼 깔아두고 필요할 때만 켜기</li>
   </ul>
 
-  <h2>5. 심화 — 캘린더별로 나란히 보기</h2>
+  <h2>5. 캘린더별로 나란히 비교하기</h2>
   <p>겹쳐 보는 것 말고, 계정·캘린더를 <b>세로 컬럼으로 나란히</b> 놓고 비교하고 싶을 때가 있음(예: 내 캘린더 vs 팀 캘린더의 빈 시간 찾기). 일일 뷰의 "나란히 보기"를 쓰면 캘린더마다 한 칸씩 세워서 같은 하루를 옆으로 비교할 수 있음.</p>
   <figure>
     <img src="../assets/screenshots/day-view.jpg" alt="PlanB Calendar 일일 뷰 나란히 보기 — Google·일정·공휴일·Naver·Naver Works 캘린더가 세로 컬럼으로 나란히 놓이고, 같은 하루의 일정이 컬럼마다 시간대별로 색으로 표시됨">
     <figcaption>일일 뷰 나란히 보기 — 캘린더를 세로로 세워 같은 하루를 한눈에 비교.</figcaption>
   </figure>
 
-  <p>정리하면, <b>계정 연결 → 한 화면에 겹쳐 보기 → 색으로 구분 → 필요한 것만 켜기</b> 이 순서면 흩어져 있던 캘린더가 하나로 모임. 앱에서 고친 일정은 각 서비스 원본에도 그대로 반영되니, 어디서 만들었는지 신경 쓸 필요도 없음.</p>
+  <p>정리하면 <b>계정 연결 → 겹쳐 보기 → 색 구분 → 필요한 것만 켜기</b> 순서면 흩어져 있던 캘린더가 하나로 모임. 앱에서 고친 일정은 각 서비스 원본에도 그대로 반영되니, 어디서 만들었는지 신경 쓸 필요도 없음.</p>
+
+  <div class="faq">
+    <h2>자주 묻는 질문</h2>
+    <div class="q">여러 캘린더를 한 화면에서 볼 수 있나요?</div>
+    <p class="a">볼 수 있음. PlanB Calendar는 네이버·네이버웍스·구글·Microsoft 365·애플·노션·URL(ICS) 캘린더를 한 화면에 겹쳐 색으로 구분해 표시함.</p>
+    <div class="q">계정마다 색을 다르게 지정할 수 있나요?</div>
+    <p class="a">가능함. 계정과 캘린더마다 색을 지정할 수 있고, 사이드바에서 원하는 캘린더만 켜거나 끌 수 있음.</p>
+    <div class="q">캘린더를 나란히 비교할 수 있나요?</div>
+    <p class="a">가능함. 일일 뷰의 나란히 보기를 쓰면 캘린더를 세로 컬럼으로 세워 같은 하루의 일정을 옆으로 비교할 수 있음.</p>
+  </div>
 
   <div class="callout">
     <h3>흩어진 캘린더, 한 곳에서</h3>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>네이버 캘린더를 PC(데스크탑)에서 쓰는 3가지 방법 — PlanB Calendar</title>
-<meta name="description" content="네이버 캘린더는 공식 데스크탑 앱이 없음. 브라우저·모바일 앱·데스크탑 캘린더 앱까지, PC에서 네이버 일정을 쓰는 방법을 비교하고 정리했음.">
+<meta name="description" content="네이버 캘린더는 공식 PC 데스크탑 앱이 없음. 브라우저·모바일 앱·데스크탑 캘린더 앱(CalDAV) 세 가지 방법을 비교하고, PC에서 네이버 일정을 양방향으로 쓰는 법을 정리했음.">
 <meta name="keywords" content="네이버 캘린더 PC, 네이버 캘린더 데스크탑, 네이버 캘린더 앱, 네이버 캘린더 동기화, 데스크탑 캘린더, PlanB Calendar, 플랜비 캘린더">
 <link rel="canonical" href="https://planb-calendar.co.kr/blog/naver-calendar-desktop.html">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -21,21 +21,27 @@
   "@context":"https://schema.org",
   "@type":"BlogPosting",
   "headline":"네이버 캘린더를 PC(데스크탑)에서 쓰는 3가지 방법",
-  "description":"네이버 캘린더는 공식 데스크탑 앱이 없음. 브라우저·모바일 앱·데스크탑 캘린더 앱까지, PC에서 네이버 일정을 쓰는 방법을 비교했음.",
+  "description":"네이버 캘린더는 공식 PC 데스크탑 앱이 없음. 브라우저·모바일 앱·데스크탑 캘린더 앱(CalDAV) 세 가지 방법을 비교했음.",
   "image":"https://planb-calendar.co.kr/assets/screenshots/month-light.jpg",
-  "datePublished":"2026-08-03",
-  "dateModified":"2026-08-03",
+  "datePublished":"2026-08-03","dateModified":"2026-08-04",
   "author":{"@type":"Organization","name":"PlanB Calendar"},
   "publisher":{"@type":"Organization","name":"PlanB Calendar","logo":{"@type":"ImageObject","url":"https://planb-calendar.co.kr/assets/icon-256.png"}},
   "mainEntityOfPage":{"@type":"WebPage","@id":"https://planb-calendar.co.kr/blog/naver-calendar-desktop.html"}
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"네이버 캘린더를 PC(데스크탑) 앱으로 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네이버는 공식 데스크탑 앱이 없지만, CalDAV를 지원하는 데스크탑 캘린더 앱(PlanB Calendar 등)에 네이버 아이디와 앱 비밀번호로 연결하면 브라우저 없이 PC에서 양방향으로 쓸 수 있습니다."}},
+    {"@type":"Question","name":"앱에서 만든 일정이 네이버 캘린더에도 반영되나요?","acceptedAnswer":{"@type":"Answer","text":"네. CalDAV 양방향 동기화라 앱에서 만들거나 고친 일정이 네이버 원본에 그대로 반영되고, 네이버에서 바꾼 일정도 앱에 반영됩니다."}},
+    {"@type":"Question","name":"네이버 캘린더와 구글·회사 캘린더를 같이 볼 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. PlanB Calendar는 네이버·네이버웍스·구글·Microsoft 365·애플·노션 캘린더를 한 화면에 색으로 구분해 함께 표시합니다."}}
+  ]
+}
+</script>
 <style>
-  :root{
-    --ink:#111111;--body:#374151;--mut:#6b7280;--mutsoft:#898989;
-    --line:#e5e7eb;--linesoft:#f3f4f6;--canvas:#ffffff;--soft:#f8f9fa;--card:#f5f5f5;
-    --dark:#101010;--ondark:#ffffff;--ondarksoft:#a1a1aa;--accent:#6E6BE6;
-  }
+  :root{--ink:#111111;--body:#374151;--mut:#6b7280;--mutsoft:#898989;--line:#e5e7eb;--linesoft:#f3f4f6;--canvas:#ffffff;--soft:#f8f9fa;--card:#f5f5f5;--dark:#101010;--ondark:#ffffff;--ondarksoft:#a1a1aa;--accent:#6E6BE6;}
   html[data-theme="dark"]{--ink:#f4f4f6;--body:#c8ccd6;--mut:#9BA1B3;--mutsoft:#7d8290;--line:#262B3B;--linesoft:#1c202c;--canvas:#0E1017;--soft:#12141d;--card:#161a26;}
   *{box-sizing:border-box;margin:0;}
   body{background:var(--canvas);color:var(--ink);font-family:Pretendard,-apple-system,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;}
@@ -50,15 +56,14 @@
   .btnP{background:var(--ink);color:var(--canvas);}
   .btnP:hover{background:var(--accent);color:#fff;}
   .tgl{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--canvas);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink);font-size:15px;}
-  /* article */
   .art{max-width:720px;margin:0 auto;padding:56px 24px 80px;}
   .crumb{font-size:13px;color:var(--mut);margin-bottom:22px;}
   .crumb a:hover{color:var(--ink);}
   .art .cat{font-size:13px;font-weight:600;color:var(--accent);margin-bottom:14px;}
   .art h1{font-size:40px;line-height:1.18;letter-spacing:-.04em;font-weight:800;margin-bottom:16px;}
-  .art .meta{font-size:14px;color:var(--mutsoft);padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:36px;}
+  .art .meta{font-size:14px;color:var(--mutsoft);padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:32px;}
   .art p{font-size:16.5px;color:var(--body);line-height:1.8;margin:0 0 20px;}
-  .art h2{font-size:26px;letter-spacing:-.03em;font-weight:800;margin:44px 0 14px;color:var(--ink);}
+  .art h2{font-size:25px;letter-spacing:-.03em;font-weight:800;margin:44px 0 14px;color:var(--ink);}
   .art ul{margin:0 0 20px;padding-left:20px;color:var(--body);}
   .art li{font-size:16.5px;line-height:1.8;margin-bottom:6px;}
   .art b{color:var(--ink);font-weight:600;}
@@ -66,11 +71,18 @@
   .art th,.art td{border:1px solid var(--line);padding:11px 14px;text-align:left;vertical-align:top;}
   .art th{background:var(--soft);font-weight:700;}
   .art td:first-child{color:var(--mut);width:34%;}
+  .tldr{margin:0 0 34px;padding:20px 24px;border:1px solid var(--line);border-radius:14px;background:var(--soft);}
+  .tldr .lbl{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--accent);margin-bottom:10px;}
+  .tldr ul{margin:0;padding-left:18px;}
+  .tldr li{font-size:15px;color:var(--body);line-height:1.7;margin-bottom:5px;}
+  .tldr b{color:var(--ink);font-weight:600;}
+  .faq .q{font-size:17.5px;font-weight:700;color:var(--ink);margin:26px 0 7px;letter-spacing:-.02em;}
+  .faq .a{font-size:16px;color:var(--body);line-height:1.8;margin:0;}
   .art figure{margin:30px 0;}
   .art figure img{width:100%;border-radius:12px;border:1px solid var(--line);display:block;background:var(--card);}
   .art figure.narrow img{max-width:340px;margin:0 auto;}
   .art figcaption{font-size:13px;color:var(--mutsoft);text-align:center;margin-top:11px;}
-  .callout{margin:36px 0 8px;padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--soft);text-align:center;}
+  .callout{margin:40px 0 8px;padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--soft);text-align:center;}
   .callout h3{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px;}
   .callout p{font-size:15px;color:var(--mut);margin-bottom:18px;}
   footer{background:var(--dark);color:var(--ondarksoft);padding:64px 0 40px;}
@@ -97,21 +109,32 @@
   <h1>네이버 캘린더를 PC(데스크탑)에서 쓰는 3가지 방법</h1>
   <div class="meta">2026년 8월 3일 · 읽는 데 6분</div>
 
-  <p>네이버 캘린더는 모바일 앱은 있지만 <b>PC용 공식 데스크탑 앱은 없음</b>. 그래서 컴퓨터로 네이버 일정을 보려면 매번 브라우저를 열어야 함. 회사에서 종일 컴퓨터를 쓰는 사람에겐 은근히 번거로운 부분임. PC에서 네이버 캘린더를 쓰는 방법을 세 가지로 정리했음.</p>
+  <div class="tldr">
+    <div class="lbl">핵심 요약</div>
+    <ul>
+      <li>네이버 캘린더는 <b>공식 PC 데스크탑 앱이 없음</b>.</li>
+      <li>PC에서 쓰는 방법 3가지 — <b>① 브라우저</b>, <b>② 모바일 앱</b>, <b>③ CalDAV로 데스크탑 캘린더 앱에 연동(추천)</b>.</li>
+      <li>③은 <b>네이버 아이디 + 앱 비밀번호</b>로 연결하며, 앱과 네이버가 <b>양방향</b>으로 동기화됨.</li>
+      <li>PlanB Calendar를 쓰면 네이버뿐 아니라 구글·MS·애플·노션까지 <b>한 화면</b>에 모아 볼 수 있음.</li>
+    </ul>
+  </div>
 
-  <h2>방법 1. 브라우저에서 열기</h2>
-  <p>가장 기본. <b>calendar.naver.com</b>에 접속해서 쓰면 됨. 설치가 필요 없고 항상 최신 상태라는 게 장점.</p>
+  <h2>네이버 캘린더에 PC용 데스크탑 앱이 있나?</h2>
+  <p><b>없음.</b> 네이버 캘린더는 모바일 앱은 있지만 Windows·Mac용 공식 데스크탑 앱은 제공하지 않음. 그래서 컴퓨터로 네이버 일정을 보려면 매번 브라우저를 열거나, 다른 방법을 써야 함. 아래 세 가지를 비교했음.</p>
+
+  <h2>방법 1 — 브라우저로 열기</h2>
+  <p>가장 간단한 방법은 <b>calendar.naver.com에 접속</b>하는 것. 설치가 필요 없고 항상 최신 상태라는 게 장점. 다만 다음 단점이 있음.</p>
   <ul>
     <li>탭을 하나 더 띄워 둬야 하고, 브라우저를 닫으면 사라짐</li>
     <li>알림이 브라우저·OS 설정에 묶여 잘 안 뜨는 경우가 많음</li>
     <li>구글·회사 캘린더를 같이 보려면 탭을 여러 개 열어 오가야 함</li>
   </ul>
 
-  <h2>방법 2. 모바일 앱만 쓰기</h2>
-  <p>네이버 앱·네이버 캘린더 앱으로 폰에서 관리하는 방식. 이동 중엔 편하지만 PC 작업 중엔 폰을 계속 봐야 해서 흐름이 끊김. <b>PC에서 바로 일정을 확인·추가</b>하고 싶은 목적엔 안 맞음.</p>
+  <h2>방법 2 — 모바일 앱으로 쓰기</h2>
+  <p>폰에서는 네이버 앱으로 편하게 관리할 수 있지만, <b>PC 작업 중엔 흐름이 끊김</b>. 컴퓨터로 일정을 바로 확인·추가하려는 목적엔 맞지 않음.</p>
 
-  <h2>방법 3. 데스크탑 캘린더 앱으로 연동하기 (추천)</h2>
-  <p>네이버 캘린더는 <b>CalDAV</b>라는 표준 방식을 지원함. 이걸 지원하는 데스크탑 캘린더 앱에 <b>네이버 아이디 + 앱 비밀번호</b>로 연결하면, 브라우저 없이 네이버 일정을 PC에서 바로 볼 수 있음. 앱에서 일정을 만들거나 고치면 네이버 원본에도 그대로 반영되는 <b>양방향</b>이 핵심.</p>
+  <h2>방법 3 — 데스크탑 캘린더 앱에 연동하기 (추천)</h2>
+  <p>가장 편한 방법은 <b>CalDAV를 지원하는 데스크탑 캘린더 앱에 네이버 계정을 연결</b>하는 것. 네이버 캘린더는 CalDAV 표준을 지원하므로, <b>네이버 아이디 + 앱 비밀번호</b>로 연결하면 브라우저 없이 PC에서 네이버 일정을 바로 볼 수 있음. 앱에서 일정을 만들거나 고치면 네이버 원본에도 그대로 반영되는 <b>양방향</b>이 핵심.</p>
   <figure>
     <img src="../assets/screenshots/account.jpg" alt="PlanB Calendar 설정 화면 — 캘린더 계정 추가 타일(Microsoft 365·Google·Apple·네이버·Notion·URL/ICS)과 연결된 Microsoft·Google·Naver·Naver Works·공휴일 계정 목록">
     <figcaption>설정 &gt; 계정에서 네이버를 포함한 여러 캘린더를 연결함.</figcaption>
@@ -121,26 +144,30 @@
     <img src="../assets/screenshots/sidebar-cal.jpg" alt="PlanB Calendar 사이드바 — Microsoft·Google·Naver·Naver Works 계정과 구독(공휴일), 일정 색상별 목록이 각각 색으로 구분되어 표시됨">
     <figcaption>사이드바에서 여러 계정을 색으로 구분해 한눈에.</figcaption>
   </figure>
-  <ul>
-    <li>브라우저 탭 없이 늘 켜두는 앱 하나로 관리</li>
-    <li>네이버에서 만든 일정도, 앱에서 만든 일정도 서로 실시간 반영(양방향)</li>
-    <li>참석자 추가 시 초대 메일 발송, 알림도 PC로 뜸</li>
-    <li>여러 계정(네이버·구글·MS·애플·노션) 일정을 한 곳에서</li>
-  </ul>
+  <p>일정에 참석자를 추가하면 <b>초대 메일이 발송</b>되고, 상대는 메일에서 바로 참석 여부를 응답할 수 있음. 알림도 브라우저가 아니라 PC 알림으로 뜸.</p>
   <figure>
     <img src="../assets/screenshots/getemail.jpg" alt="일정에 참석자를 추가하면 참석자에게 초대 메일이 발송되고, 메일에서 참석 여부(예·아니요·미정)를 바로 응답할 수 있음">
-    <figcaption>일정에 참석자를 추가하면 초대 메일이 발송되고, 상대는 메일에서 바로 참석 여부를 응답함.</figcaption>
+    <figcaption>참석자를 추가하면 초대 메일이 발송되고, 상대는 메일에서 바로 응답함.</figcaption>
   </figure>
 
-  <h2>한눈에 비교</h2>
+  <h2>세 가지 방법 비교</h2>
   <table>
     <tr><th>방법</th><th>PC에서 바로 보기</th><th>여러 계정 통합</th><th>양방향 편집</th></tr>
     <tr><td>브라우저</td><td>△ (탭 필요)</td><td>✕</td><td>○</td></tr>
     <tr><td>모바일 앱</td><td>✕</td><td>△</td><td>○</td></tr>
     <tr><td>데스크탑 앱(PlanB)</td><td>○</td><td>○</td><td>○</td></tr>
   </table>
+  <p>정리하면, 가끔 확인만 하면 브라우저로 충분하지만 <b>PC에서 네이버 일정을 자주 보고 편집하거나 다른 계정과 같이 보고 싶다면</b> 데스크탑 캘린더 앱으로 연동하는 게 가장 편함.</p>
 
-  <p>정리하면, 가끔 확인만 하면 브라우저로 충분하지만 <b>PC에서 네이버 일정을 자주 보고 편집하거나, 다른 계정과 같이 보고 싶다면</b> 데스크탑 캘린더 앱으로 연동하는 게 가장 편함.</p>
+  <div class="faq">
+    <h2>자주 묻는 질문</h2>
+    <div class="q">네이버 캘린더를 PC 앱으로 쓸 수 있나요?</div>
+    <p class="a">네이버는 공식 데스크탑 앱이 없지만, CalDAV를 지원하는 데스크탑 캘린더 앱(PlanB Calendar 등)에 네이버 아이디와 앱 비밀번호로 연결하면 브라우저 없이 PC에서 양방향으로 쓸 수 있음.</p>
+    <div class="q">앱에서 만든 일정이 네이버 캘린더에도 반영되나요?</div>
+    <p class="a">반영됨. CalDAV 양방향 동기화라 앱에서 만들거나 고친 일정이 네이버 원본에 그대로 반영되고, 네이버에서 바꾼 일정도 앱에 반영됨.</p>
+    <div class="q">네이버 캘린더와 구글·회사 캘린더를 같이 볼 수 있나요?</div>
+    <p class="a">가능함. PlanB Calendar는 네이버·네이버웍스·구글·Microsoft 365·애플·노션 캘린더를 한 화면에 색으로 구분해 함께 표시함.</p>
+  </div>
 
   <div class="callout">
     <h3>네이버 일정, PC에서 바로 써보기</h3>
