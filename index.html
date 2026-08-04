@@ -81,6 +81,7 @@
   .btnP:hover{background:var(--accent);color:#fff;}
   .btnG{border-color:var(--line);color:var(--ink);background:var(--canvas);}
   .tgl{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--canvas);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink);font-size:15px;}
+  .navtoggle{display:none;width:38px;height:38px;border-radius:8px;border:1px solid var(--line);background:var(--canvas);color:var(--ink);align-items:center;justify-content:center;cursor:pointer;font-size:17px;}
   /* hero */
   .hero{padding:88px 0 40px;text-align:center;}
   .badge{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:var(--mut);background:var(--card);border-radius:9999px;padding:5px 14px;margin-bottom:26px;}
@@ -148,7 +149,7 @@
   .fcol a{display:block;color:var(--ondarksoft);font-size:14px;padding:5px 0;}
   .fcol a:hover{color:var(--ondark);}
   .fbot{border-top:1px solid #262626;padding-top:24px;font-size:13px;color:var(--ondarksoft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-  @media(max-width:860px){h1{font-size:40px;}h2{font-size:32px;}.navlinks{display:none;}section.blk{padding:64px 0;}.hero{padding:64px 0 32px;}.grid,.grid.two{grid-template-columns:1fr;}.row2{grid-template-columns:1fr;}.row2.rev .txt{order:0;}}
+  @media(max-width:860px){h1{font-size:40px;}h2{font-size:32px;}.navlinks{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--canvas);border-bottom:1px solid var(--line);padding:6px 0;box-shadow:0 14px 26px -14px rgba(0,0,0,.25);}.navlinks.open{display:flex;}.navlinks a{padding:13px 24px;}.navtoggle{display:flex;}section.blk{padding:64px 0;}.hero{padding:64px 0 32px;}.grid,.grid.two{grid-template-columns:1fr;}.row2{grid-template-columns:1fr;}.row2.rev .txt{order:0;}}
 </style>
 </head>
 <body>
@@ -156,7 +157,7 @@
 <nav><div class="wrap nav">
   <a class="brand" href="/"><img src="assets/icon-256.png" width="26" height="26" alt="PlanB Calendar 아이콘" style="border-radius:6px;">PlanB Calendar</a>
   <div class="navlinks"><a href="#services">연동</a><a href="#features">기능</a><a href="#faq">FAQ</a><a href="blog/">블로그</a><a href="releases.html">릴리스노트</a><a href="bug-report.html">버그 신고</a></div>
-  <button class="tgl" id="themeBtn" aria-label="라이트/다크 전환">◐</button>
+  <button class="navtoggle" id="navBtn" aria-label="메뉴">☰</button><button class="tgl" id="themeBtn" aria-label="라이트/다크 전환">◐</button>
   <a class="btn btnP" href="https://github.com/planbcalendar/planbcalendar.github.io/releases/latest/download/PlanB-Calendar-Setup.exe">다운로드</a>
 </div></nav>
 
@@ -369,5 +370,6 @@
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.style.display==='flex')closeLb();});
 })();
 </script>
+<script>(function(){var b=document.getElementById("navBtn"),n=document.querySelector(".navlinks");if(b&&n)b.addEventListener("click",function(){n.classList.toggle("open");});})();</script>
 </body>
 </html>
