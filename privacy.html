@@ -55,14 +55,14 @@
 
 <div class="page">
   <h1>개인정보처리방침</h1>
-  <p class="upd">최종 업데이트: 2026년 7월 · PlanB Calendar (제작 DASIDA7)</p>
+  <p class="upd">최종 업데이트: 2026년 8월 · PlanB Calendar (제작 DASIDA7)</p>
 
   <p>PlanB Calendar(이하 "앱")는 사용자의 개인정보를 존중하며, <strong>로컬 우선(local-first)</strong> 원칙에 따라 최소한의 데이터만 처리합니다. 본 방침은 앱이 어떤 정보를 어떻게 다루는지 설명합니다.</p>
 
   <h2>1. 수집·저장하는 정보</h2>
   <ul>
     <li><strong>일정 데이터</strong> — 제목·시간·장소·메모·참석자 등. 사용자의 <strong>기기 로컬</strong>에 저장됩니다.</li>
-    <li><strong>계정 연결 정보</strong> — Google·Microsoft 365·Notion 연결 시 OAuth 인증 토큰, Apple iCloud 연결 시 Apple ID와 앱 전용 암호. 동기화 목적에만 사용되며 기기에 보관됩니다.</li>
+    <li><strong>계정 연결 정보</strong> — Google·Microsoft 365·Notion 연결 시 OAuth 인증 토큰, Apple iCloud·네이버·네이버웍스 연결 시 계정 아이디와 앱 전용 비밀번호, URL(ICS) 구독 시 구독 주소. 동기화 목적에만 사용되며 <strong>암호화되어 기기에 보관</strong>됩니다(<a href="#protect">5. 데이터 보호 조치</a>).</li>
     <li><strong>앱 설정</strong> — 테마·강조색·위젯·출발지 등 환경설정. 기기 로컬에 저장됩니다.</li>
   </ul>
 
@@ -73,25 +73,36 @@
   </ul>
 
   <h2>3. 제3자 제공</h2>
-  <p>앱은 사용자의 일정·계정 정보를 <strong>제작자나 제3자에게 전송·판매하지 않습니다.</strong> 데이터 통신은 사용자가 직접 연결한 캘린더 제공자(Google·Microsoft·Apple·Notion)와의 동기화에 한정됩니다.</p>
+  <p>앱은 사용자의 일정·계정 정보를 <strong>제작자나 제3자에게 전송·판매하지 않습니다.</strong> 데이터 통신은 사용자가 직접 연결한 캘린더 제공자(Google·Microsoft 365·Apple iCloud·네이버·네이버웍스·Notion·URL 구독)와의 동기화에 한정됩니다.</p>
 
   <h2>4. 외부 서비스</h2>
   <p>연결된 각 캘린더 제공자 및 지도·경로 안내(출발 알림)에 사용되는 서비스는 각 제공자의 개인정보처리방침을 따릅니다. 앱은 해당 서비스에 사용자가 연결·요청한 범위의 정보만 전달합니다.</p>
 
-  <h2>5. 데이터 삭제</h2>
+  <h2 id="protect">5. 데이터 보호 조치</h2>
+  <p>앱은 사용자의 민감한 정보(캘린더 일정, 계정 인증 정보)를 보호하기 위해 다음 조치를 적용합니다.</p>
+  <ul>
+    <li><strong>인증 정보 암호화 저장</strong> — Google·Microsoft 365·Notion의 OAuth 토큰(액세스 토큰·리프레시 토큰), Apple iCloud·네이버·네이버웍스의 앱 전용 비밀번호, 비공개 구독 주소는 <strong>운영체제가 제공하는 암호화 저장소</strong>(Windows DPAPI, macOS 키체인, Linux 키링)를 통해 <strong>암호화된 상태로만</strong> 기기에 저장됩니다. 암호화 키는 해당 사용자 계정에 종속되어, 다른 사용자 계정이나 파일을 그대로 복사한 환경에서는 복호화되지 않습니다.</li>
+    <li><strong>전송 구간 보호</strong> — 캘린더 제공자 및 지도·경로 서비스와의 모든 통신은 <strong>TLS(HTTPS)</strong>로 암호화됩니다.</li>
+    <li><strong>서버 미보유</strong> — 제작자는 사용자 데이터를 수신·보관하는 서버를 운영하지 않습니다. 일정과 인증 정보는 <strong>사용자 기기와 사용자가 연결한 서비스 사이</strong>에서만 오갑니다.</li>
+    <li><strong>접근 범위 최소화</strong> — 각 서비스에 기능 수행에 필요한 최소 권한만 요청하며, 인증 정보는 앱의 백그라운드 프로세스에서만 다루어지고 화면(렌더러)으로 전달되지 않습니다.</li>
+    <li><strong>즉시 파기</strong> — 계정 연결을 해제하면 해당 인증 정보가 기기에서 삭제됩니다.</li>
+  </ul>
+  <p style="color:var(--mut);font-size:14px;">PlanB Calendar protects sensitive data with the following measures: OAuth tokens and account passwords are stored <strong>encrypted at rest</strong> using the operating system's secure storage (Windows DPAPI, macOS Keychain, Linux keyring), bound to the signed-in OS user account; all communication with calendar providers is encrypted in transit via <strong>TLS (HTTPS)</strong>; the developer operates <strong>no server</strong> that receives or retains user data; credentials are handled only in the app's background process and are never exposed to the user interface layer; and credentials are deleted from the device as soon as an account is disconnected.</p>
+
+  <h2>6. 데이터 삭제</h2>
   <p>계정 연결 해제 시 해당 계정의 인증 정보와 캐시된 일정이 기기에서 제거됩니다. 앱 삭제 시 로컬에 저장된 모든 데이터가 함께 삭제됩니다.</p>
 
-  <h2>6. Google 사용자 데이터 처리 및 API 정책 준수</h2>
+  <h2>7. Google 사용자 데이터 처리 및 API 정책 준수</h2>
   <p>PlanB Calendar가 Google API를 통해 접근하는 정보의 이용 및 전송은 <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API 서비스 사용자 데이터 정책(Google API Services User Data Policy)</a>을 준수하며, 여기에는 <strong>제한적 사용(Limited Use) 요건</strong>이 포함됩니다.</p>
   <p style="color:var(--mut);font-size:14px;">PlanB Calendar's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
   <ul>
-    <li><strong>접근 범위</strong> — Google 캘린더 일정 조회·생성·수정·삭제(<code>calendar.events</code>), 표시할 캘린더 목록 조회(<code>calendar.readonly</code>), 연결 계정 식별을 위한 이메일 주소 확인(<code>userinfo.email</code>).</li>
-    <li><strong>이용 목적</strong> — 사용자가 연결한 Google 캘린더의 일정을 앱 한 화면에서 통합 조회하고 동기화(생성·수정·삭제)하기 위함에 한정됩니다.</li>
-    <li><strong>저장 위치</strong> — 조회한 일정과 OAuth 인증 토큰은 <strong>사용자 기기 로컬에만</strong> 저장되며, 제작자의 서버나 제3자로 전송·저장되지 않습니다.</li>
+    <li><strong>접근 범위</strong> — Google 캘린더 일정 조회·생성·수정·삭제(<code>calendar.events</code>), 표시할 캘린더 목록 조회(<code>calendar.readonly</code>), 연결 계정 식별을 위한 이메일 주소 확인(<code>userinfo.email</code>), 사용자가 「할 일 연결」을 켠 경우에 한해 Google 할 일 목록·항목 조회·생성·수정·완료·삭제(<code>tasks</code>).</li>
+    <li><strong>이용 목적</strong> — 사용자가 연결한 Google 캘린더의 일정을 앱 한 화면에서 통합 조회하고 동기화(생성·수정·삭제)하기 위함에 한정됩니다. 할 일 권한은 앱의 「할 일」 목록을 Google 할 일과 양방향으로 맞추는 데에만 쓰이며, <strong>사용자가 설정에서 켜지 않으면 요청하지 않습니다</strong>.</li>
+    <li><strong>저장 위치</strong> — 조회한 일정·할 일과 OAuth 인증 토큰은 <strong>사용자 기기 로컬에만</strong> 저장되며, 제작자의 서버나 제3자로 전송·저장되지 않습니다. 인증 토큰은 위 <a href="#protect">5. 데이터 보호 조치</a>에 따라 <strong>암호화된 상태로</strong> 보관됩니다.</li>
     <li><strong>비사용 원칙</strong> — Google 사용자 데이터를 광고 목적으로 사용하거나 판매·양도하지 않으며, 정책상 허용된 예외(사용자 명시 동의, 보안, 법적 요구 등)를 제외하고 사람이 열람하지 않습니다.</li>
   </ul>
 
-  <h2>7. 문의</h2>
+  <h2>8. 문의</h2>
   <p>본 방침에 관한 문의는 이메일 <a href="mailto:info@planb-calendar.co.kr">info@planb-calendar.co.kr</a> 또는 <a href="bug-report.html">버그 신고 페이지</a>를 통해 하실 수 있습니다.</p>
 </div>
 
