@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>바탕화면에 일정 띄우기 — 무료 캘린더 위젯 고르는 법 — PlanB Calendar</title>
+<meta name="description" content="바탕화면 캘린더 위젯은 「무료」와 「캘린더 연동」이 같이 오지 않는 경우가 많음. 무료판에서 연동이 막히는 앱, 구글만 되는 앱을 비교하고 위젯을 고를 때 볼 네 가지를 정리했음.">
+<meta name="keywords" content="바탕화면 캘린더 위젯, 네이버 캘린더 바탕화면, 윈도우 달력 위젯, 데스크탑 캘린더 위젯, 구글 캘린더 위젯, 무료 캘린더 위젯, PlanB Calendar, 플랜비 캘린더">
+<link rel="canonical" href="https://planb-calendar.co.kr/blog/desktop-calendar-widget.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="바탕화면에 일정 띄우기 — 무료 캘린더 위젯 고르는 법">
+<meta property="og:description" content="무료 위젯 앱은 보통 연동이 막혀 있거나 구글만 됨. 위젯을 고를 때 볼 네 가지를 정리했음.">
+<meta property="og:url" content="https://planb-calendar.co.kr/blog/desktop-calendar-widget.html">
+<meta property="og:image" content="https://planb-calendar.co.kr/assets/screenshots/widget-month-dark.jpg">
+<link rel="icon" href="../assets/icon-256.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BlogPosting",
+  "headline":"바탕화면에 일정 띄우기 — 무료 캘린더 위젯 고르는 법",
+  "description":"바탕화면 캘린더 위젯은 「무료」와 「캘린더 연동」이 같이 오지 않는 경우가 많음. 위젯을 고를 때 볼 네 가지를 정리했음.",
+  "image":"https://planb-calendar.co.kr/assets/screenshots/widget-month-dark.jpg",
+  "datePublished":"2026-11-18","dateModified":"2026-11-18",
+  "author":{"@type":"Organization","name":"PlanB Calendar"},
+  "publisher":{"@type":"Organization","name":"PlanB Calendar","logo":{"@type":"ImageObject","url":"https://planb-calendar.co.kr/assets/icon-256.png"}},
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://planb-calendar.co.kr/blog/desktop-calendar-widget.html"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"바탕화면 캘린더 위젯은 무료로 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"위젯 자체는 무료인 앱이 여럿 있습니다. 다만 무료판에서는 구글·Outlook 같은 외부 캘린더 연동이 유료 기능으로 묶여 있는 경우가 많아, 무료로 설치하면 일정이 비어 있는 달력만 보일 수 있습니다. 설치 전에 「무료판에서도 내 계정을 연결할 수 있는지」를 확인하는 것이 좋습니다."}},
+    {"@type":"Question","name":"네이버 캘린더 일정을 바탕화면 위젯으로 볼 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"PlanB Calendar는 네이버·네이버웍스 캘린더를 CalDAV로 연결하며, 연결한 계정의 일정이 바탕화면 위젯에도 함께 표시됩니다. 무료 위젯 앱 중에는 구글 캘린더만 지원하는 경우가 많아 네이버 일정은 보이지 않을 수 있습니다."}},
+    {"@type":"Question","name":"위젯에 띄운 일정은 어디에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"PlanB Calendar는 받아 온 일정을 사용자 PC에 저장하고, 로그인 정보는 운영체제의 암호화 저장소에 보관합니다. 암호화 열쇠가 지금 로그인한 Windows 사용자 계정에 묶여 있어 파일이 다른 PC로 복사되어도 열리지 않습니다."}},
+    {"@type":"Question","name":"위젯만 쓰고 앱 창은 안 띄울 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 위젯은 앱 창과 별개로 바탕화면에 떠 있고, 앱 창을 닫아도 위젯은 남습니다. 위젯의 날짜를 누르면 그 날짜로 앱을 열 수 있습니다."}}
+  ]
+}
+</script>
+<style>
+  :root{--ink:#111111;--body:#374151;--mut:#6b7280;--mutsoft:#898989;--line:#e5e7eb;--linesoft:#f3f4f6;--canvas:#ffffff;--soft:#f8f9fa;--card:#f5f5f5;--dark:#101010;--ondark:#ffffff;--ondarksoft:#a1a1aa;--accent:#6E6BE6;}
+  html[data-theme="dark"]{--ink:#f4f4f6;--body:#c8ccd6;--mut:#9BA1B3;--mutsoft:#7d8290;--line:#262B3B;--linesoft:#1c202c;--canvas:#0E1017;--soft:#12141d;--card:#161a26;}
+  *{box-sizing:border-box;margin:0;}
+  body{background:var(--canvas);color:var(--ink);font-family:Pretendard,-apple-system,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;text-decoration:none;}
+  nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--canvas) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;gap:26px;height:64px;}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:16px;letter-spacing:-.02em;}
+  .navlinks{display:flex;gap:24px;margin-left:auto;font-size:14px;color:var(--mut);font-weight:500;}
+  .navlinks a:hover,.navlinks a.on{color:var(--ink);}
+  .btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:1px solid transparent;background:none;color:inherit;font-family:inherit;}
+  .btnP{background:var(--ink);color:var(--canvas);}
+  .btnP:hover{background:var(--accent);color:#fff;}
+  .tgl{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--canvas);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink);font-size:15px;}
+  .navtoggle{display:none;width:38px;height:38px;border-radius:8px;border:1px solid var(--line);background:var(--canvas);color:var(--ink);align-items:center;justify-content:center;cursor:pointer;font-size:17px;}
+  .dl-ico{display:none;}
+  .art{max-width:720px;margin:0 auto;padding:56px 24px 80px;}
+  .crumb{font-size:13px;color:var(--mut);margin-bottom:22px;}
+  .crumb a:hover{color:var(--ink);}
+  .art .cat{font-size:13px;font-weight:600;color:var(--accent);margin-bottom:14px;}
+  .art h1{font-size:40px;line-height:1.18;letter-spacing:-.04em;font-weight:800;margin-bottom:16px;}
+  .art .meta{font-size:14px;color:var(--mutsoft);padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:32px;}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin:2px 0 22px;}
+  .tags span{font-size:13px;font-weight:600;color:var(--mut);background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:5px 11px;}
+  .art p{font-size:16.5px;color:var(--body);line-height:1.8;margin:0 0 20px;}
+  .art h2{font-size:25px;letter-spacing:-.03em;font-weight:800;margin:44px 0 14px;color:var(--ink);}
+  .art h3{font-size:19px;letter-spacing:-.02em;font-weight:700;margin:30px 0 10px;color:var(--ink);}
+  .art ul,.art ol{margin:0 0 20px;padding-left:20px;color:var(--body);}
+  .art li{font-size:16.5px;line-height:1.8;margin-bottom:6px;}
+  .art b{color:var(--ink);font-weight:600;}
+  .art table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:15px;}
+  .art th,.art td{border:1px solid var(--line);padding:11px 14px;text-align:left;vertical-align:top;}
+  .art th{background:var(--soft);font-weight:700;}
+  .art td:first-child{color:var(--mut);width:34%;}
+  .tldr{margin:0 0 34px;padding:20px 24px;border:1px solid var(--line);border-radius:14px;background:var(--soft);}
+  .tldr .lbl{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--accent);margin-bottom:10px;}
+  .tldr ul{margin:0;padding-left:18px;}
+  .tldr li{font-size:15px;color:var(--body);line-height:1.7;margin-bottom:5px;}
+  .tldr b{color:var(--ink);font-weight:600;}
+  .note{margin:0 0 24px;padding:16px 20px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;background:var(--soft);}
+  .note p{font-size:15px;margin:0;}
+  .faq .q{font-size:17.5px;font-weight:700;color:var(--ink);margin:26px 0 7px;letter-spacing:-.02em;}
+  .faq .a{font-size:16px;color:var(--body);line-height:1.8;margin:0;}
+  .art figure{margin:30px 0;}
+  .art figure img{width:100%;border-radius:12px;border:1px solid var(--line);display:block;background:var(--card);}
+  .art figure.narrow img{max-width:340px;margin:0 auto;}
+  .art figcaption{font-size:13px;color:var(--mutsoft);text-align:center;margin-top:11px;}
+  .callout{margin:40px 0 8px;padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--soft);text-align:center;}
+  .callout h3{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px;margin-top:0;}
+  .callout p{font-size:15px;color:var(--mut);margin-bottom:18px;}
+  footer{background:var(--dark);color:var(--ondarksoft);padding:64px 0 40px;}
+  .fgrid{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;margin-bottom:40px;}
+  footer .brand{color:var(--ondark);}
+  .fcol h4{color:var(--ondark);font-size:13px;font-weight:600;margin-bottom:14px;letter-spacing:.02em;}
+  .fcol a{display:block;color:var(--ondarksoft);font-size:14px;padding:5px 0;}
+  .fcol a:hover{color:var(--ondark);}
+  .fbot{border-top:1px solid #262626;padding-top:24px;font-size:13px;color:var(--ondarksoft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  @media(max-width:760px){.navlinks{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--canvas);border-bottom:1px solid var(--line);padding:6px 0;box-shadow:0 14px 26px -14px rgba(0,0,0,.25);}.navlinks.open{display:flex;}.navlinks a{padding:13px 24px;}.navtoggle{display:flex;}.nav{gap:12px;}.tgl{margin-left:auto;}.nav .btnP{padding:0 12px;}.dl-txt{display:none;}.dl-ico{display:inline-block;vertical-align:middle;}.art h1{font-size:30px;}.art{padding-top:36px;}.art table{font-size:13px;}.art th,.art td{padding:8px 10px;}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav">
+  <a class="brand" href="../index.html"><img src="../assets/icon-256.png" width="26" height="26" alt="PlanB Calendar 아이콘" style="border-radius:6px;">PlanB Calendar</a>
+  <div class="navlinks"><a href="../index.html#services">연동</a><a href="../index.html#features">기능</a><a href="../index.html#faq">FAQ</a><a href="index.html" class="on">블로그</a><a href="../releases.html">릴리스노트</a><a href="../bug-report.html">버그 신고</a></div>
+  <button class="tgl" id="themeBtn" aria-label="라이트/다크 전환">◐</button>
+  <a class="btn btnP" href="https://github.com/planbcalendar/planbcalendar.github.io/releases/latest/download/PlanB-Calendar-Setup.exe" aria-label="다운로드"><svg class="dl-ico" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg><span class="dl-txt">다운로드</span></a><button class="navtoggle" id="navBtn" aria-label="메뉴">☰</button>
+</div></nav>
+
+<article class="art">
+  <div class="crumb"><a href="index.html">← 블로그</a></div>
+  <div class="cat">비교</div>
+  <h1>바탕화면에 일정 띄우기 — 무료 캘린더 위젯 고르는 법</h1>
+  <div class="tags"><span>#바탕화면위젯</span><span>#네이버캘린더바탕화면</span><span>#윈도우달력위젯</span><span>#무료캘린더</span></div>
+  <div class="meta">2026년 11월 18일 · 읽는 데 6분</div>
+
+  <div class="tldr">
+    <div class="lbl">핵심 요약</div>
+    <ul>
+      <li>바탕화면 위젯 앱은 <b>「무료」와 「캘린더 연동」이 같이 오지 않는</b> 경우가 많음.</li>
+      <li>오래된 유명 앱 하나는 <b>외부 캘린더 연동 전체가 유료 기능</b>이어서, 무료판을 깔면 빈 달력을 받음.</li>
+      <li>무료로 연동되는 앱도 대개 <b>구글 캘린더만</b> 지원함. 네이버·Outlook·iCloud 일정은 안 보임.</li>
+      <li>고를 때 볼 것 넷 — <b>무료판에서도 연결되나 · 내가 쓰는 서비스가 되나 · 양방향이냐 · 데이터가 어디 저장되나</b>.</li>
+    </ul>
+  </div>
+
+  <p>컴퓨터를 켜면 바탕화면이 먼저 보임. 그래서 「달력을 바탕화면에 그냥 띄워 두면 좋겠다」는 생각은 자연스러움. 문제는 막상 찾아보면 선택지가 생각보다 좁다는 것. 받아서 깔고 나서야 「내 일정이 안 들어오네」를 알게 되는 일이 흔함.</p>
+  <p>이 글은 바탕화면 캘린더 위젯을 고를 때 <b>설치 전에</b> 확인할 것을 정리한 것. 비교에 쓴 앱은 이름 대신 A·B로 적었음.</p>
+
+  <h2>함정 1 — 무료판에서는 연동이 막혀 있는 경우</h2>
+  <p>윈도우에서 오래 쓰인 바탕화면 달력 앱(<b>A</b>)이 있음. 무료판과 유료판이 나뉘어 있고, 유료판은 10유로 가량의 1회 결제임. 그런데 기능 목록을 보면 구글 캘린더·Outlook·CalDAV 같은 <b>외부 캘린더 연동이 전부 유료판 기능</b>으로 묶여 있음.</p>
+  <p>즉 「무료 바탕화면 달력」으로 검색해 A의 무료판을 설치하면, 달력 모양은 예쁘게 뜨지만 <b>내 일정은 한 건도 안 들어옴</b>. 거기서 일정을 직접 적으면 그 컴퓨터 안에만 남고 폰과 이어지지 않음. 연동을 쓰려면 결제를 해야 함.</p>
+  <div class="note">
+    <p>A의 무료판이 나쁘다는 뜻은 아님. 「내 손으로 적는 바탕화면 달력」으로는 충분함. 다만 <b>이미 쓰는 캘린더를 띄우려는 목적</b>이라면 무료판은 답이 아니라는 것.</p>
+  </div>
+
+  <h2>함정 2 — 무료로 연동되지만 한 서비스만 되는 경우</h2>
+  <p>무료로 구글 캘린더를 바탕화면에 띄워 주는 앱(<b>B</b>)도 있음. 구글 캘린더와 구글 할 일을 양방향으로 다루고, 받아 온 자료를 그 컴퓨터에만 저장함. 구글만 쓰는 사람에게는 잘 맞는 선택임.</p>
+  <p>다만 <b>구글만</b> 됨. 네이버 캘린더, 회사에서 쓰는 Microsoft 365, 아이폰과 이어진 iCloud 일정은 들어오지 않음. 한국에서는 「개인은 네이버, 회사는 Outlook」처럼 서비스가 갈려 있는 경우가 많아서, 이 지점에서 막히는 사람이 적지 않음.</p>
+  <p>그 밖에 바탕화면 꾸미기 도구(<b>C</b>)에 달력 스킨을 올리는 방법도 있음. 보이는 모양은 자유롭지만 스킨마다 기능이 달라, 연동 여부는 고른 스킨에 따라 제각각임.</p>
+
+  <h2>고를 때 볼 것 네 가지</h2>
+  <ol>
+    <li><b>무료판에서도 내 계정을 연결할 수 있나.</b> 「무료」와 「연동 무료」는 다른 말임. 기능 비교표에서 연동 항목에 유료 표시가 붙어 있는지 먼저 볼 것.</li>
+    <li><b>내가 실제로 쓰는 서비스가 되나.</b> 구글만 되는 앱이 많음. 네이버·Microsoft 365·iCloud를 쓰면 지원 목록을 하나하나 확인해야 함.</li>
+    <li><b>양방향이냐.</b> 보기만 되는 앱과, 위젯에서 고친 것이 원본에 반영되는 앱은 쓰임새가 꽤 다름.</li>
+    <li><b>일정이 어디에 저장되나.</b> 일정에는 사람 이름과 장소가 들어감. 받아 온 자료를 내 컴퓨터에 두는지, 중간 서버를 거치는지 확인할 것.</li>
+  </ol>
+
+  <h2>비교표</h2>
+  <table>
+    <tr><th>항목</th><th>A 무료판</th><th>A 유료판</th><th>B</th><th>PlanB 위젯</th></tr>
+    <tr><td>값</td><td>무료</td><td>10유로 가량 1회</td><td>무료</td><td>무료</td></tr>
+    <tr><td>구글 캘린더</td><td>✕</td><td>○</td><td>○</td><td>○</td></tr>
+    <tr><td>Microsoft 365</td><td>✕</td><td>○</td><td>✕</td><td>○</td></tr>
+    <tr><td>네이버 · 네이버웍스</td><td>✕</td><td>△</td><td>✕</td><td>○</td></tr>
+    <tr><td>Apple iCloud · Notion</td><td>✕</td><td>△</td><td>✕</td><td>○</td></tr>
+    <tr><td>일정 저장 위치</td><td>내 PC</td><td>내 PC</td><td>내 PC</td><td>내 PC</td></tr>
+  </table>
+  <p>표의 △는 <b>된다고 단정할 수 없다는 뜻</b>. A 유료판은 CalDAV 표준을 지원하므로 그 방식을 쓰는 서비스는 연결될 가능성이 있지만, 실제로 확인해 본 결과가 아니라 그대로 적었음.</p>
+
+  <h2>PlanB Calendar의 위젯</h2>
+  <p>PlanB Calendar는 무료 Windows 캘린더 앱이고, 바탕화면 위젯을 함께 제공함. 앱에 연결한 계정이 그대로 위젯에 올라오는 구조라, <b>네이버·구글·Microsoft 365·Apple iCloud·Notion을 한 위젯에서 같이 봄</b>.</p>
+  <p>위젯 종류는 세 가지 — <b>월뷰</b>(한 달 전체), <b>미니캘린더</b>(작은 달력), <b>아젠다</b>(다가오는 일정 목록). 설정 &gt; 위젯에서 고름.</p>
+  <figure>
+    <img src="../assets/screenshots/widget-month-dark.jpg" alt="PlanB Calendar 월뷰 위젯이 바탕화면에 떠 있는 모습 — 한 달 달력에 업무·개인·가족 일정이 서로 다른 색으로 표시되고, 여러 날에 걸친 일정은 가로 막대로 보임">
+    <figcaption>월뷰 위젯. 앱에 연결한 계정의 일정이 그대로 올라옴.</figcaption>
+  </figure>
+  <h3>바탕화면에 맞춰 조절되는 것들</h3>
+  <ul>
+    <li><b>글자 크기</b> — 작게·보통·크게. 키우면 「지금 위젯 크기에서 한 칸에 몇 개까지 보이는지」를 함께 알려 줌</li>
+    <li><b>글자색</b> — 배경을 단색으로 쓸 때 자동·밝게·어둡게 중에 고름. 짙은 배경에 밝은 글씨를 올릴 수 있음</li>
+    <li><b>투명도</b> — 바탕화면 사진을 가리지 않게 조절</li>
+    <li><b>폭에 맞춘 표시</b> — 좁히면 일정이 점으로 바뀌고, 넓으면 긴 제목이 말줄임돼 날짜 칸이 어긋나지 않음</li>
+  </ul>
+  <figure>
+    <img src="../assets/screenshots/widget-textsize.jpg" alt="위젯 글자 크기 비교 — 왼쪽 「작게」는 한 칸에 일정 3개와 「+2개 더」가 보이고, 오른쪽 「크게」는 일정 2개와 「+3개 더」가 보임">
+    <figcaption>같은 위젯을 글자 크기만 바꿔 찍은 것. 왼쪽이 작게, 오른쪽이 크게.</figcaption>
+  </figure>
+  <h3>할 일과 공휴일</h3>
+  <p>할 일은 종일 일정과 구분되게 테두리와 체크 원으로 표시되고, 완료한 것은 취소선, 기한이 지난 것은 앱과 같은 빨간 톤으로 강조됨. 아젠다 위젯은 맨 위에 <b>「지난 할 일 N건」</b>을 한 줄로 붙여 줌 — 눌러서 무엇이 언제까지였는지 펼쳐 볼 수 있음. 공휴일은 앱과 같은 빨강으로 보이고, 설정에서 공휴일 표시를 끄면 위젯에서도 함께 꺼짐.</p>
+  <figure class="narrow">
+    <img src="../assets/screenshots/widget-overdue.jpg" alt="아젠다 위젯 맨 위의 「지난 할 일 2건」을 펼친 모습 — 기한이 지난 할 일이 날짜와 함께 나오고, 그 아래로 오늘부터의 일정이 이어짐">
+    <figcaption>아젠다 위젯 맨 위에 붙는 「지난 할 일」. 눌러서 펼친 모습.</figcaption>
+  </figure>
+  <h3>일정과 로그인 정보가 저장되는 곳</h3>
+  <p>받아 온 일정은 사용자 PC에 저장함. 로그인 정보는 <b>운영체제의 암호화 저장소</b>에 넣는데, 암호화 열쇠가 지금 로그인한 Windows 사용자 계정에 묶여 있어서 그 파일이 다른 PC나 다른 사용자에게 복사되어도 열리지 않음.</p>
+
+  <div class="faq">
+    <h2>자주 묻는 질문</h2>
+    <div class="q">바탕화면 캘린더 위젯은 무료로 쓸 수 있나요?</div>
+    <p class="a">위젯 자체는 무료인 앱이 여럿 있음. 다만 무료판에서는 구글·Outlook 같은 외부 캘린더 연동이 유료 기능으로 묶여 있는 경우가 많아, 무료로 설치하면 일정이 비어 있는 달력만 보일 수 있음. 설치 전에 「무료판에서도 내 계정을 연결할 수 있는지」를 확인하는 게 좋음.</p>
+    <div class="q">네이버 캘린더 일정을 바탕화면 위젯으로 볼 수 있나요?</div>
+    <p class="a">PlanB Calendar는 네이버·네이버웍스 캘린더를 CalDAV로 연결하고, 연결한 계정의 일정이 바탕화면 위젯에도 함께 표시됨. 무료 위젯 앱 중에는 구글 캘린더만 지원하는 경우가 많아 네이버 일정은 보이지 않을 수 있음.</p>
+    <div class="q">위젯에 띄운 일정은 어디에 저장되나요?</div>
+    <p class="a">PlanB Calendar는 받아 온 일정을 사용자 PC에 저장하고, 로그인 정보는 운영체제의 암호화 저장소에 보관함. 암호화 열쇠가 지금 로그인한 Windows 사용자 계정에 묶여 있어 파일이 다른 PC로 복사되어도 열리지 않음.</p>
+    <div class="q">위젯만 쓰고 앱 창은 안 띄울 수 있나요?</div>
+    <p class="a">가능함. 위젯은 앱 창과 별개로 바탕화면에 떠 있고, 앱 창을 닫아도 위젯은 남음. 위젯의 날짜를 누르면 그 날짜로 앱을 열 수 있음.</p>
+  </div>
+
+  <div class="callout">
+    <h3>바탕화면에 내 일정 띄우기</h3>
+    <p>PlanB Calendar는 무료 Windows 데스크탑 캘린더 앱임. 네이버·구글·Microsoft 365·애플 일정을 한 위젯에서.</p>
+    <a class="btn btnP" href="https://github.com/planbcalendar/planbcalendar.github.io/releases/latest/download/PlanB-Calendar-Setup.exe">Windows용 다운로드</a>
+  </div>
+</article>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div style="max-width:260px;">
+      <div class="brand" style="margin-bottom:12px;"><img src="../assets/icon-256.png" width="24" height="24" alt="" style="border-radius:6px;">PlanB Calendar</div>
+      <p style="font-size:14px;color:var(--ondarksoft);">흩어진 일정을 한 곳에서 보는 Windows 데스크탑 캘린더.</p>
+    </div>
+    <div class="fcol"><h4>제품</h4><a href="../index.html#services">연동</a><a href="../index.html#features">기능</a><a href="../releases.html">릴리스노트</a></div>
+    <div class="fcol"><h4>문서</h4><a href="index.html">블로그</a><a href="../index.html#faq">FAQ</a><a href="../privacy.html">개인정보처리방침</a><a href="../terms.html">이용약관</a></div>
+    <div class="fcol"><h4>링크</h4><a href="https://github.com/planbcalendar/planbcalendar.github.io/releases/latest/download/PlanB-Calendar-Setup.exe">다운로드</a><a href="../bug-report.html">버그 신고</a><a href="https://github.com/planbcalendar/planbcalendar.github.io">GitHub</a></div>
+  </div>
+  <div class="fbot"><span>© 2026 PlanB Calendar</span><span>제작 DASIDA7</span></div>
+</div></footer>
+
+<script>
+(function(){
+  var html=document.documentElement,btn=document.getElementById('themeBtn');
+  var saved=localStorage.getItem('planb_theme');if(saved)html.setAttribute('data-theme',saved);
+  function sync(){btn.textContent=html.getAttribute('data-theme')==='dark'?'☾':'☀';}
+  sync();
+  btn.addEventListener('click',function(){var d=html.getAttribute('data-theme')==='dark';var n=d?'light':'dark';html.setAttribute('data-theme',n);localStorage.setItem('planb_theme',n);sync();});
+})();
+</script>
+<script>(function(){var b=document.getElementById("navBtn"),n=document.querySelector(".navlinks");if(b&&n)b.addEventListener("click",function(){n.classList.toggle("open");});})();</script>
+</body>
+</html>

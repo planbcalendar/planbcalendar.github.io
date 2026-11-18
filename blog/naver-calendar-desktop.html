@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>네이버 캘린더를 PC(데스크탑)에서 쓰는 3가지 방법 — PlanB Calendar</title>
 <meta name="description" content="네이버 캘린더는 공식 PC 데스크탑 앱이 없음. 브라우저·모바일 앱·데스크탑 캘린더 앱(CalDAV) 세 가지 방법을 비교하고, PC에서 네이버 일정을 양방향으로 쓰는 법을 정리했음.">
-<meta name="keywords" content="네이버 캘린더 PC, 네이버 캘린더 데스크탑, 네이버 캘린더 앱, 네이버 캘린더 동기화, 데스크탑 캘린더, PlanB Calendar, 플랜비 캘린더">
+<meta name="keywords" content="네이버 캘린더 PC, 네이버 캘린더 설치, 네이버 캘린더 바탕화면, 네이버 캘린더 앱, 네이버 캘린더 동기화, 네이버 일정 PC, 데스크탑 캘린더, PlanB Calendar, 플랜비 캘린더">
 <link rel="canonical" href="https://planb-calendar.co.kr/blog/naver-calendar-desktop.html">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="article">
@@ -36,7 +36,9 @@
   "mainEntity":[
     {"@type":"Question","name":"네이버 캘린더를 PC(데스크탑) 앱으로 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네이버는 공식 데스크탑 앱이 없지만, CalDAV를 지원하는 데스크탑 캘린더 앱(PlanB Calendar 등)에 네이버 아이디와 앱 비밀번호로 연결하면 브라우저 없이 PC에서 양방향으로 쓸 수 있습니다."}},
     {"@type":"Question","name":"앱에서 만든 일정이 네이버 캘린더에도 반영되나요?","acceptedAnswer":{"@type":"Answer","text":"네. CalDAV 양방향 동기화라 앱에서 만들거나 고친 일정이 네이버 원본에 그대로 반영되고, 네이버에서 바꾼 일정도 앱에 반영됩니다."}},
-    {"@type":"Question","name":"네이버 캘린더와 구글·회사 캘린더를 같이 볼 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. PlanB Calendar는 네이버·네이버웍스·구글·Microsoft 365·애플·노션 캘린더를 한 화면에 색으로 구분해 함께 표시합니다."}}
+    {"@type":"Question","name":"네이버 캘린더와 구글·회사 캘린더를 같이 볼 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. PlanB Calendar는 네이버·네이버웍스·구글·Microsoft 365·애플·노션 캘린더를 한 화면에 색으로 구분해 함께 표시합니다."}},
+    {"@type":"Question","name":"네이버 캘린더를 PC에 까는 방법이 있나요?","acceptedAnswer":{"@type":"Answer","text":"네이버가 내놓은 PC 설치 파일은 없습니다. 그래서 설치해서 쓰고 싶다면, CalDAV를 지원하는 데스크탑 캘린더 앱을 설치하고 네이버 아이디와 앱 비밀번호로 연결하는 것이 가장 가깝습니다. 설치하면 브라우저를 열지 않고도 네이버 일정을 바로 보고 고칠 수 있습니다."}},
+    {"@type":"Question","name":"네이버 캘린더를 바탕화면에 고정할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네이버 캘린더 자체에는 그런 기능이 없습니다. 데스크탑 캘린더 앱의 바탕화면 위젯을 쓰면 앱 창을 열지 않아도 네이버 일정이 바탕화면에 늘 떠 있습니다."}}
   ]
 }
 </script>
@@ -64,6 +66,8 @@
   .art .cat{font-size:13px;font-weight:600;color:var(--accent);margin-bottom:14px;}
   .art h1{font-size:40px;line-height:1.18;letter-spacing:-.04em;font-weight:800;margin-bottom:16px;}
   .art .meta{font-size:14px;color:var(--mutsoft);padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:32px;}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin:2px 0 22px;}
+  .tags span{font-size:13px;font-weight:600;color:var(--mut);background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:5px 11px;}
   .art p{font-size:16.5px;color:var(--body);line-height:1.8;margin:0 0 20px;}
   .art h2{font-size:25px;letter-spacing:-.03em;font-weight:800;margin:44px 0 14px;color:var(--ink);}
   .art ul{margin:0 0 20px;padding-left:20px;color:var(--body);}
@@ -109,6 +113,7 @@
   <div class="crumb"><a href="index.html">← 블로그</a></div>
   <div class="cat">활용법 · 비교</div>
   <h1>네이버 캘린더를 PC(데스크탑)에서 쓰는 3가지 방법</h1>
+  <div class="tags"><span>#네이버캘린더PC</span><span>#네이버캘린더앱</span><span>#바탕화면위젯</span><span>#데스크탑캘린더</span><span>#네이버캘린더설치</span></div>
   <div class="meta">2026년 8월 3일 · 읽는 데 6분</div>
 
   <div class="tldr">
@@ -147,6 +152,7 @@
     <figcaption>사이드바에서 여러 계정을 색으로 구분해 한눈에.</figcaption>
   </figure>
   <p>일정에 참석자를 추가하면 <b>초대 메일이 발송</b>되고, 상대는 메일에서 바로 참석 여부를 응답할 수 있음. 알림도 브라우저가 아니라 PC 알림으로 뜸.</p>
+  <p><b>바탕화면에 띄워 두고 싶다면</b> 앱 창을 열지 않아도 되는 데스크탑 위젯을 쓸 수 있음. 연결한 네이버 일정이 그대로 위젯에 올라옴. 고르는 기준은 <a href="desktop-calendar-widget.html" style="color:var(--accent);font-weight:600;">바탕화면 캘린더 위젯 고르는 법</a>에 정리했음.</p>
   <figure>
     <img src="../assets/screenshots/getemail.jpg" alt="일정에 참석자를 추가하면 참석자에게 초대 메일이 발송되고, 메일에서 참석 여부(예·아니요·미정)를 바로 응답할 수 있음">
     <figcaption>참석자를 추가하면 초대 메일이 발송되고, 상대는 메일에서 바로 응답함.</figcaption>
@@ -169,6 +175,10 @@
     <p class="a">반영됨. CalDAV 양방향 동기화라 앱에서 만들거나 고친 일정이 네이버 원본에 그대로 반영되고, 네이버에서 바꾼 일정도 앱에 반영됨.</p>
     <div class="q">네이버 캘린더와 구글·회사 캘린더를 같이 볼 수 있나요?</div>
     <p class="a">가능함. PlanB Calendar는 네이버·네이버웍스·구글·Microsoft 365·애플·노션 캘린더를 한 화면에 색으로 구분해 함께 표시함.</p>
+    <div class="q">네이버 캘린더를 PC에 까는 방법이 있나요?</div>
+    <p class="a">네이버가 내놓은 <b>PC 설치 파일은 없음</b>. 그래서 설치해서 쓰고 싶다면, CalDAV를 지원하는 데스크탑 캘린더 앱을 설치하고 네이버 아이디와 앱 비밀번호로 연결하는 것이 가장 가까움. 설치하면 브라우저를 열지 않고도 네이버 일정을 바로 보고 고칠 수 있음.</p>
+    <div class="q">네이버 캘린더를 바탕화면에 고정할 수 있나요?</div>
+    <p class="a">네이버 캘린더 자체에는 그런 기능이 없음. 데스크탑 캘린더 앱의 <b>바탕화면 위젯</b>을 쓰면 앱 창을 열지 않아도 네이버 일정이 바탕화면에 늘 떠 있음. 고르는 기준은 <a href="desktop-calendar-widget.html" style="color:var(--accent);font-weight:600;">이 글</a>에 정리했음.</p>
   </div>
 
   <div class="callout">
